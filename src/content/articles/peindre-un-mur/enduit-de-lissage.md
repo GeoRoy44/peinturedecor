@@ -43,7 +43,7 @@ Sur les forums de bricolage, le débat revient sans cesse. D'un côté, la poudr
 
 ### Les marques que l'on croise en magasin
 
-Toupret, Semin, Bostik, Placo et Sika proposent toutes des enduits de lissage pour l'intérieur, en poudre comme en pâte. **L'épaisseur maximale par passe varie d'un produit à l'autre**, et la fiche technique reste la seule référence fiable : à titre d'exemple, l'enduit en poudre [Toupret Lisser F](https://toupret.com/fr/enduit-particuliers/produit/lisser-en-finition/enduit-pour-lisser-f) s'applique jusqu'à 2 mm, sur supports bruts ou déjà peints. Avant d'acheter, mieux vaut vérifier trois points sur l'emballage : l'épaisseur admise, le temps de séchage et la compatibilité avec le support.
+Toupret, Semin, Bostik, Placo et Sika proposent toutes des enduits de lissage pour l'intérieur, en poudre comme en pâte. **Leurs fiches techniques convergent sur un point : 2 mm d'épaisseur maximale par couche**, que ce soit pour le [Toupret Lisser F](https://toupret.com/fr/enduit-particuliers/produit/lisser-en-finition/enduit-pour-lisser-f), l'[enduit de lissage pâte Bostik](https://diy.bostik.com/sites/default/files/2025-09/FT%20Enduit%20de%20lissage%20p%C3%A2te.pdf), le [Semin Lissage](https://www.semin.fr/produits/peinture/lisseur/lisseur-pr%C3%AAt-lemploi/enduit-de-lissage) ou le [SikaWall Lissage](https://fra.sika.com/dam/dms/fr01/m/sikawall_smoothingpowderfinishcoating.pdf). Les vraies différences se jouent ailleurs : le temps de séchage varie de 2 heures à 48 heures selon les références, et la consommation au mètre carré d'un produit à l'autre. Au-delà de 2 mm, il faut passer à un enduit de rebouchage ou à un enduit multifonction.
 
 ### Quel prix pour un enduit de lissage ?
 
@@ -90,7 +90,7 @@ Une fois la première couche sèche, la seconde passe se fait dans le sens perpe
 
 ## Combien de temps sèche un enduit de lissage
 
-Tout dépend de l'épaisseur, de la température et de l'humidité de la pièce. **Une couche fine sèche souvent en quelques heures, mais il faut parfois compter jusqu'à 24 heures entre deux passes**, surtout dans une pièce fraîche. Le temps indiqué sur la notice fait foi, et un enduit sec se reconnaît à sa teinte uniforme, sans zone plus sombre. Notre article sur le [temps de séchage de la peinture](/peindre-un-mur/temps-de-sechage-peinture/) aide ensuite à planifier la suite du chantier.
+Tout dépend du produit, de l'épaisseur, de la température et de l'humidité de la pièce. **Le délai va de 2 heures pour les enduits les plus rapides à 48 heures avant la finition pour d'autres**, d'après les fiches techniques des fabricants, et il s'allonge encore dans une pièce fraîche. Le temps indiqué sur la notice fait foi, et un enduit sec se reconnaît à sa teinte uniforme, sans zone plus sombre. Notre article sur le [temps de séchage de la peinture](/peindre-un-mur/temps-de-sechage-peinture/) aide ensuite à planifier la suite du chantier.
 
 ## Comment poncer un enduit de lissage
 
