@@ -13,6 +13,10 @@
 .prose a { color: var(--terracotta); text-decoration-thickness: 2px; text-underline-offset: 3px; transition: color .2s; }
 .prose a:hover { color: var(--sauge-fonce); }
 .prose blockquote { margin: 1.5rem 0; padding: 1rem 1.4rem; border-left: 4px solid var(--sauge); background: var(--sable); border-radius: 0 var(--radius) var(--radius) 0; }
+.prose table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: .98rem; background: #fff; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+.prose th, .prose td { padding: .75rem 1rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--sable); }
+.prose th { background: var(--sauge); color: var(--chaux); font-weight: 600; }
+.prose tr:last-child td { border-bottom: 0; }
 
 .article__cta {
   margin-top: 3rem; padding: 2rem; border-radius: var(--radius-lg);
@@ -20,3 +24,7 @@
   display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;
 }
 .article__cta p { margin: 0; font-family: var(--font-titre); font-size: 1.3rem; }
+
+@media (max-width: 640px) {
+  .prose table { display: block; overflow-x: auto; }
+}

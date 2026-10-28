@@ -1,6 +1,8 @@
 ---
 import Base from '../../layouts/Base.astro';
 import HeroAnime from '../../components/HeroAnime.astro';
+import '../../styles/article.css';
+import { getCollection, render } from 'astro:content';
 import { categories, type Categorie } from '../../data/categories';
 import { getArticles, urlArticle } from '../../lib/articles';
 
@@ -11,12 +13,27 @@ export function getStaticPaths() {
 const { cat } = Astro.props as { cat: Categorie };
 const autres = categories.filter((c) => c.slug !== cat.slug);
 const articles = await getArticles(cat.slug);
+const mere = (await getCollection('meres')).find((m) => m.id === cat.slug);
+const Contenu = mere ? (await render(mere)).Content : null;
+const titreSeo = mere ? mere.data.seoTitle : `${cat.titre} – PeintureDécor.fr`;
+const description = mere ? mere.data.description : cat.description;
+const h1 = mere ? mere.data.h1 : cat.h1;
 ---
-<Base title={`${cat.titre} – PeintureDécor.fr`} description={cat.description}>
-  <HeroAnime kicker={cat.titre} titre={cat.h1} intro={cat.intro} variante={cat.variante} ctaLabel="Voir les guides" ctaHref="#guides" />
+<Base title={titreSeo} description={description}>
+  <HeroAnime kicker={cat.titre} titre={h1} intro={cat.intro} variante={cat.variante} ctaLabel="Voir les guides" ctaHref="#guides" />
+  {Contenu && (
+    <section class="section">
+      <div class="container article">
+        <nav class="fil" aria-label="Fil d'Ariane"><a href="/">Accueil</a> / {cat.titre}</nav>
+        <div class="prose">
+          <Contenu />
+        </div>
+      </div>
+    </section>
+  )}
   <section id="guides" class="section">
     <div class="container">
-      <nav class="fil" aria-label="Fil d'Ariane"><a href="/">Accueil</a> / {cat.titre}</nav>
+      {!Contenu && <nav class="fil" aria-label="Fil d'Ariane"><a href="/">Accueil</a> / {cat.titre}</nav>}
       <h2>Guides {cat.titre.toLowerCase()}</h2>
       {articles.length > 0 ? (
         <div class="cartes">
