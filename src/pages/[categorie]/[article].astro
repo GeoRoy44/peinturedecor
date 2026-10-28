@@ -1,0 +1,73 @@
+---
+import Base from '../../layouts/Base.astro';
+import '../../styles/article.css';
+import { render } from 'astro:content';
+import { categories } from '../../data/categories';
+import { getArticles, splitId, urlArticle, type Article } from '../../lib/articles';
+
+export async function getStaticPaths() {
+  const articles = await getArticles();
+  return articles
+    .filter((a) => categories.some((c) => c.slug === splitId(a).categorie))
+    .map((a) => ({
+      params: { categorie: splitId(a).categorie, article: splitId(a).slug },
+      props: { entry: a }
+    }));
+}
+
+const { entry } = Astro.props as { entry: Article };
+const cat = categories.find((c) => c.slug === splitId(entry).categorie)!;
+const { Content } = await render(entry);
+const soeurs = (await getArticles(cat.slug)).filter((a) => a.id !== entry.id).slice(0, 4);
+const site = Astro.site!.toString().replace(/\/$/, '');
+const dateFr = new Intl.DateTimeFormat('fr-FR', { dateStyle: 'long' });
+const fil = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${site}/` },
+    { '@type': 'ListItem', position: 2, name: cat.titre, item: `${site}/${cat.slug}/` },
+    { '@type': 'ListItem', position: 3, name: entry.data.title, item: `${site}${urlArticle(entry)}` }
+  ]
+};
+---
+<Base title={`${entry.data.title} – PeintureDécor.fr`} description={entry.data.description}>
+  <script type="application/ld+json" set:html={JSON.stringify(fil)} />
+  <article class="section">
+    <div class="container article">
+      <nav class="fil" aria-label="Fil d'Ariane">
+        <a href="/">Accueil</a> / <a href={`/${cat.slug}/`}>{cat.titre}</a> / {entry.data.title}
+      </nav>
+      <header class="article__entete">
+        <span class="hero__kicker">{cat.titre}</span>
+        <h1>{entry.data.title}</h1>
+        <p class="article__meta">
+          Publié le <time datetime={entry.data.date.toISOString()}>{dateFr.format(entry.data.date)}</time>
+          {entry.data.maj && <> · mis à jour le <time datetime={entry.data.maj.toISOString()}>{dateFr.format(entry.data.maj)}</time></>}
+        </p>
+      </header>
+      <div class="prose">
+        <Content />
+      </div>
+      <aside class="article__cta">
+        <p>Et si vous préférez confier le chantier à un professionnel ?</p>
+        <a href="/peintre-en-batiment/" class="btn">Trouver un peintre <span class="btn__fleche" aria-hidden="true">→</span></a>
+      </aside>
+    </div>
+  </article>
+  {soeurs.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <h2>À lire aussi</h2>
+        <div class="cartes">
+          {soeurs.map((a) => (
+            <a href={urlArticle(a)} class={`carte carte--${cat.variante}`}>
+              <h3>{a.data.title}</h3>
+              <p>{a.data.description}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+</Base>
