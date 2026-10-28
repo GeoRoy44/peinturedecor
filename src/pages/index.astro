@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+import HeroAnime from '../components/HeroAnime.astro';
+import { categories } from '../data/categories';
+---
+<Base title="PeintureDécor.fr – Guides peinture décorative et déco intérieure" description="Peinture à effets, enduits décoratifs, couleurs tendances : tous nos guides pour transformer vos murs.">
+  <HeroAnime
+    kicker="Peinture & décoration intérieure"
+    titre="Donnez de la matière à vos murs"
+    intro="Effets béton, chaux, tadelakt, couleurs terracotta ou vert sauge : des guides clairs pour choisir et appliquer."
+    variante="terracotta"
+  />
+  <section id="guides" class="section">
+    <div class="container">
+      <h2>Nos univers</h2>
+      <div class="cartes">
+        {categories.map((c) => (
+          <a href={`/${c.slug}/`} class={`carte carte--${c.variante}`}>
+            <h3>{c.titre}</h3>
+            <p>{c.intro}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="bandeau">
+        <h2>Quelle peinture pour votre pièce ?</h2>
+        <a href="/peinture-par-piece/" class="btn">Trouver la bonne finition <span class="btn__fleche" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,35 @@
+---
+import Base from '../../layouts/Base.astro';
+import HeroAnime from '../../components/HeroAnime.astro';
+import { categories, type Categorie } from '../../data/categories';
+
+export function getStaticPaths() {
+  return categories.map((c) => ({ params: { categorie: c.slug }, props: { cat: c } }));
+}
+
+const { cat } = Astro.props as { cat: Categorie };
+const autres = categories.filter((c) => c.slug !== cat.slug);
+---
+<Base title={`${cat.titre} – PeintureDécor.fr`} description={cat.description}>
+  <HeroAnime kicker={cat.titre} titre={cat.h1} intro={cat.intro} variante={cat.variante} ctaLabel="Voir les guides" ctaHref="#guides" />
+  <section id="guides" class="section">
+    <div class="container">
+      <nav class="fil" aria-label="Fil d'Ariane"><a href="/">Accueil</a> / {cat.titre}</nav>
+      <h2>Guides {cat.titre.toLowerCase()}</h2>
+      <p>Les premiers guides arrivent bientôt.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <h2>Autres univers</h2>
+      <div class="cartes">
+        {autres.map((c) => (
+          <a href={`/${c.slug}/`} class={`carte carte--${c.variante}`}>
+            <h3>{c.titre}</h3>
+            <p>{c.intro}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,11 @@
+---
+import { categories } from '../data/categories';
+---
+<header class="header">
+  <div class="container header__inner">
+    <a href="/" class="logo">Peinture<span>Décor</span></a>
+    <nav class="nav" aria-label="Navigation principale">
+      {categories.map((c) => <a href={`/${c.slug}/`}>{c.titre}</a>)}
+    </nav>
+  </div>
+</header>

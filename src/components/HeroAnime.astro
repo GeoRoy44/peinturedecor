@@ -1,0 +1,44 @@
+---
+interface Props {
+  kicker: string;
+  titre: string;
+  intro: string;
+  variante?: 'terracotta' | 'sauge' | 'sable' | 'beton';
+  ctaLabel?: string;
+  ctaHref?: string;
+}
+const { kicker, titre, intro, variante = 'terracotta', ctaLabel = 'Découvrir les guides', ctaHref = '#guides' } = Astro.props;
+const couleurs = {
+  terracotta: ['#C0603F', '#D98A6A', '#5C6B5A'],
+  sauge: ['#5C6B5A', '#8A9887', '#C0603F'],
+  sable: ['#A89F91', '#CDBFA8', '#C0603F'],
+  beton: ['#2B2622', '#A89F91', '#C0603F']
+}[variante];
+---
+<section class={`hero hero--${variante}`}>
+  <div class="container hero__grid">
+    <div>
+      <span class="hero__kicker">{kicker}</span>
+      <h1>{titre}</h1>
+      <p class="hero__intro">{intro}</p>
+      <div class="hero__actions">
+        <a href={ctaHref} class="btn">{ctaLabel} <span class="btn__fleche" aria-hidden="true">→</span></a>
+        <a href="/couleurs-et-tendances/" class="btn btn--ghost">Nuancier & tendances</a>
+      </div>
+    </div>
+    <div class="hero__visuel" role="img" aria-label="Illustration animée d'un mur en cours de peinture">
+      <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g class="anim-fond">
+          <circle class="anim-tache-1" cx="120" cy="130" r="90" fill={couleurs[1]} opacity=".55" />
+          <circle class="anim-tache-2" cx="380" cy="170" r="70" fill={couleurs[2]} opacity=".35" />
+          <circle class="anim-tache-3" cx="330" cy="400" r="110" fill={couleurs[0]} opacity=".3" />
+        </g>
+        <path class="anim-trait" d="M40 300 C 140 230, 260 360, 460 280" fill="none" stroke={couleurs[0]} stroke-width="70" stroke-linecap="round" />
+        <g class="anim-rouleau">
+          <rect x="410" y="240" width="80" height="80" rx="20" fill="#F5F1EA" stroke="#2B2622" stroke-width="6" />
+          <path d="M450 320 V 380 H 430 V 470" fill="none" stroke="#2B2622" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
