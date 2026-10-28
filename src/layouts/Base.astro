@@ -16,6 +16,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="linkavista" content="02365711cc580fc5a78e8780d2dc17f6bf39830d" />
+    <script is:inline>document.documentElement.classList.add('js');</script>
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
@@ -34,5 +35,22 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
       <slot />
     </main>
     <Footer />
+    <script>
+      const cibles = document.querySelectorAll('[data-reveal]');
+      const calme = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (calme || !('IntersectionObserver' in window)) {
+        cibles.forEach((el) => el.classList.add('est-visible'));
+      } else {
+        const obs = new IntersectionObserver((entrees) => {
+          entrees.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add('est-visible');
+              obs.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+        cibles.forEach((el) => obs.observe(el));
+      }
+    </script>
   </body>
 </html>
