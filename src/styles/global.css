@@ -113,6 +113,29 @@ img, svg { max-width: 100%; display: block; }
 .footer a { color: var(--chaux); }
 .footer__inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
 
+/* Accueil */
+.section--sable { background: var(--sable); }
+.section__intro { max-width: 70ch; margin: 0 0 2rem; font-size: 1.05rem; }
+.carte__lien { display: inline-flex; gap: .4rem; margin-top: 1rem; font-weight: 600; color: var(--terracotta); transition: gap .25s; }
+.carte:hover .carte__lien { gap: .7rem; }
+.carte--guide { border-top-color: var(--terracotta-clair); }
+.carte--guide h3 { font-size: 1.2rem; }
+.editorial { max-width: 760px; }
+.editorial p { margin: 0 0 1.2rem; }
+.editorial a { text-underline-offset: 3px; }
+.sources { margin-top: 2rem; padding: 1.4rem 1.6rem; border-radius: var(--radius); background: var(--sable); font-size: .9rem; color: var(--charbon); }
+.sources__titre { margin: 0 0 .5rem; font-weight: 600; color: var(--beton); }
+.sources ul { margin: 0; padding-left: 1.2rem; }
+.bandeau__texte { flex: 1 1 420px; }
+.bandeau__texte p { margin: .8rem 0 0; max-width: 58ch; }
+.faq details { margin-bottom: .9rem; border-radius: var(--radius); background: #fff; box-shadow: var(--shadow); overflow: hidden; }
+.faq summary { padding: 1.1rem 1.4rem; font-family: var(--font-titre); font-size: 1.15rem; font-weight: 600; cursor: pointer; list-style: none; position: relative; padding-right: 3rem; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: '+'; position: absolute; right: 1.4rem; top: 50%; transform: translateY(-50%); color: var(--terracotta); font-size: 1.4rem; transition: transform .25s; }
+.faq details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+.faq details p { margin: 0; padding: 0 1.4rem 1.2rem; }
+.ouverture { margin-top: 2rem; font-style: italic; }
+
 @media (max-width: 860px) {
   .hero__grid { grid-template-columns: 1fr; }
   .hero__visuel { aspect-ratio: 4 / 3; }

@@ -2,36 +2,135 @@
 import Base from '../layouts/Base.astro';
 import HeroAnime from '../components/HeroAnime.astro';
 import { categories } from '../data/categories';
+import { getArticles, urlArticle } from '../lib/articles';
 
 const verification = '<!-- 945a170f8e111bebc668b7655b27c7be -->';
+
+const ancres: Record<string, string> = {
+  C3: 'Apprendre à peindre un mur pas à pas',
+  C1: 'Comparer les peintres en bâtiment par ville',
+  C2: 'Découvrir les effets de peinture décorative',
+  C4: 'Consulter nos comparatifs de peintures intérieures',
+  C5: 'Préparer la peinture de votre façade'
+};
+
+const articles = await getArticles();
+
+const site = 'https://peinturedecor.fr/';
+const jsonLd = JSON.stringify([
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'PeintureDécor',
+    url: site,
+    inLanguage: 'fr-FR'
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'PeintureDécor',
+    url: site,
+    logo: `${site}favicon.svg`,
+    founder: { '@type': 'Person', name: 'Geoffrey Royer' }
+  }
+]);
 ---
-<Base title="PeintureDécor.fr – Peindre, décorer, trouver un peintre" description="Méthodes pour peindre un mur, peinture décorative, comparatifs, façade et annuaire de peintres : tous nos guides.">
+<Base title="Peinture et décoration intérieure : guides | PeintureDécor" description="Peindre un mur, oser la chaux ou le tadelakt, choisir sa peinture, trouver un peintre : des guides de peinture et décoration intérieure, sources à l'appui.">
   <Fragment set:html={verification} />
+  <script type="application/ld+json" set:html={jsonLd} />
   <HeroAnime
-    kicker="Peinture & décoration intérieure"
-    titre="Donnez de la matière à vos murs"
-    intro="Peindre comme un pro, oser le tadelakt ou la chaux, choisir sa peinture ou trouver le bon artisan."
+    kicker="PeintureDécor, le média des murs bien faits"
+    titre="Peinture et décoration intérieure : des méthodes claires pour vos murs"
+    intro="Vous voulez repeindre une pièce, tester la chaux ou comparer des devis ? Nos guides partent de votre mur et des textes officiels, pas d'une fiche produit."
     variante="terracotta"
+    ctaLabel="Lire le guide pour peindre un mur"
+    ctaHref="/peindre-un-mur/"
   />
+
   <section id="guides" class="section">
     <div class="container">
-      <h2>Nos univers</h2>
+      <h2>Nos univers de décoration peinture</h2>
+      <p class="section__intro">Par où commencer ? Tout dépend de votre projet, et de la part que vous comptez faire vous-même. Cinq univers structurent le site, <strong>du premier coup de rouleau jusqu'au choix d'un artisan</strong>.</p>
       <div class="cartes">
         {categories.map((c) => (
           <a href={`/${c.slug}/`} class={`carte carte--${c.variante}`}>
             <h3>{c.titre}</h3>
             <p>{c.intro}</p>
+            <span class="carte__lien">{ancres[c.cocon]} <span aria-hidden="true">→</span></span>
           </a>
         ))}
       </div>
     </div>
   </section>
+
+  {articles.length > 0 && (
+    <section class="section section--sable">
+      <div class="container">
+        <h2>Derniers guides publiés</h2>
+        <p class="section__intro">Les guides arrivent au fil du calendrier éditorial. Voici ceux qui sont déjà en ligne (<strong>la liste se met à jour toute seule</strong> à chaque nouvelle publication).</p>
+        <div class="cartes">
+          {articles.map((a) => (
+            <a href={urlArticle(a)} class="carte carte--guide">
+              <h3>{a.data.title}</h3>
+              <p>{a.data.description}</p>
+              <span class="carte__lien">Lire le guide <span aria-hidden="true">→</span></span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="section">
+    <div class="container editorial">
+      <h2>Pourquoi un média sur la peinture et la décoration intérieure ?</h2>
+      <p>Vous avez sans doute déjà vécu la scène. Un samedi matin au rayon peinture, quarante nuances de blanc et des pots qui promettent tous un rendu impeccable. En fait, la peinture et la décoration intérieure se décident rarement devant le pot : <strong>la réussite se joue surtout avant, sur la préparation du support</strong>.</p>
+      <p>Comment sont construits nos guides ? Chaque méthode suit l'ordre d'un vrai chantier : préparer, protéger, appliquer, puis contrôler. D'ailleurs, le guide pour <a href="/peindre-un-mur/lessivage-mur/">lessiver un mur avant de peindre</a> et celui sur <a href="/peindre-un-mur/enduit-de-lissage/">l'enduit de lissage</a> passent avant toute question de couleur. <strong>Les affirmations techniques s'appuient sur des textes officiels</strong>, pas sur des argumentaires de marques.</p>
+      <p>Prenons l'étiquette d'émissions dans l'air intérieur. Elle figure sur les peintures d'intérieur vendues en France et classe les produits de A+ à C, selon le <a href="https://www.ecologie.gouv.fr/politiques-publiques/etiquetage-produits-construction" rel="noopener">ministère de la Transition écologique</a>. Ce dispositif découle de l'<a href="https://www.legifrance.gouv.fr/loda/id/JORFTEXT000023991852/" rel="noopener">arrêté du 19 avril 2011</a>. <strong>Une classe A+ correspond à de très faibles émissions</strong>, un repère simple pour une chambre d'enfant.</p>
+      <p>Attention quand même à un point dans l'ancien. Pour un logement construit avant le 1er janvier 1949, un constat de risque d'exposition au plomb est exigé à la vente comme à la location, rappelle le <a href="https://sante.gouv.fr/sante-et-environnement/batiments/article/dispositif-de-prevention-des-risques-sanitaires-lies-au-plomb" rel="noopener">ministère de la Santé</a>. <strong>Mieux vaut connaître la composition d'une vieille peinture avant de la poncer.</strong></p>
+      <p>Envie de matière plutôt que d'aplat ? Les <a href="/peinture-decorative/">enduits et effets de peinture décorative</a> ont leur propre univers. Pour le choix d'une marque ou d'une finition, nos <a href="/meilleure-peinture-interieure/">comparatifs de peintures pour l'intérieur</a> prennent le relais. <strong>Chaque comparatif annonce ses critères</strong> avant de donner un avis.</p>
+      <p>Soyons clairs sur nos limites. PeintureDécor est édité par Geoffrey Royer, consultant SEO à Nantes, qui n'est pas peintre. Les guides rassemblent des méthodes documentées et des sources vérifiables. <strong>Pour un chantier complexe, l'avis d'un professionnel sur place reste préférable.</strong></p>
+      <div class="sources">
+        <p class="sources__titre">Sources consultées</p>
+        <ul>
+          <li><a href="https://www.ecologie.gouv.fr/politiques-publiques/etiquetage-produits-construction" rel="noopener">Étiquetage des produits de construction, ecologie.gouv.fr</a></li>
+          <li><a href="https://www.legifrance.gouv.fr/loda/id/JORFTEXT000023991852/" rel="noopener">Arrêté du 19 avril 2011, Légifrance</a></li>
+          <li><a href="https://sante.gouv.fr/sante-et-environnement/batiments/article/dispositif-de-prevention-des-risques-sanitaires-lies-au-plomb" rel="noopener">Prévention des risques liés au plomb, sante.gouv.fr</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <section class="section">
     <div class="container">
       <div class="bandeau">
-        <h2>Besoin d'un devis peinture ?</h2>
-        <a href="/peintre-en-batiment/" class="btn">Trouver un peintre <span class="btn__fleche" aria-hidden="true">→</span></a>
+        <div class="bandeau__texte">
+          <h2>Besoin d'un devis peinture ?</h2>
+          <p>Certains chantiers méritent un artisan : plafond haut, plâtre fissuré, grande surface à reprendre. L'annuaire vous aide à <strong>comparer les peintres de votre ville</strong> et à lire un devis sereinement.</p>
+        </div>
+        <a href="/peintre-en-batiment/" class="btn">Comparer les peintres de ma ville <span class="btn__fleche" aria-hidden="true">→</span></a>
       </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container editorial">
+      <h2>Vos questions sur la peinture intérieure</h2>
+      <div class="faq">
+        <details open>
+          <summary>Faut-il lessiver un mur avant de le peindre ?</summary>
+          <p>Dans la plupart des cas, oui. Une surface grasse ou poussiéreuse retient mal la peinture, d'où des cloques ou des traces. Le guide pour <a href="/peindre-un-mur/lessivage-mur/">bien lessiver un mur</a> détaille <strong>la marche à suivre selon la pièce</strong>.</p>
+        </details>
+        <details>
+          <summary>Enduit de lissage ou sous-couche, que passer en premier ?</summary>
+          <p>L'enduit vient d'abord, quand le mur présente des trous ou des irrégularités. La sous-couche arrive ensuite, sur un support sain et minutieusement ponçé. Pour les gestes, voyez <a href="/peindre-un-mur/enduit-de-lissage/">comment appliquer un enduit de lissage</a>, car <strong>l'ordre des couches change tout au rendu final</strong>.</p>
+        </details>
+        <details>
+          <summary>Les mêmes méthodes valent-elles en extérieur ?</summary>
+          <p>À vrai dire, pas vraiment. Une façade subit la pluie, le gel et le soleil, et demande des produits adaptés, parfois des démarches en mairie. Nos <a href="/peinture-facade/">conseils pour la peinture de façade</a> couvrent <strong>ces contraintes propres à l'extérieur</strong>.</p>
+        </details>
+      </div>
+      <p class="ouverture">Et si vous commenciez par votre mur le plus simple ? La <a href="/peindre-un-mur/">méthode complète pour peindre un mur</a> vous attend, pièce par pièce.</p>
     </div>
   </section>
 </Base>
