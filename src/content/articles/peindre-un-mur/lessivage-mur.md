@@ -37,7 +37,7 @@ Voici la question qui revient le plus souvent, et la réponse dépend surtout du
 | Cristaux de soude | Mur très gras, cuisine, encrassement important | Produit irritant : gants et lunettes, rinçage indispensable |
 | Savon noir | Mur peu sale, approche plus douce | Rinçage soigné pour éviter les résidus gras |
 
-Ces repères restent généraux. **Chaque fabricant indique son propre dosage**, et mieux vaut s'y tenir plutôt que de forcer la dose en pensant gagner du temps. (Une solution trop concentrée peut ternir une peinture fragile, voire la décolorer par endroits.)
+Ces repères restent généraux. **Chaque fabricant indique son propre dosage**, et mieux vaut s'y tenir plutôt que de forcer la dose en pensant gagner du temps. (Une solution trop concentrée peut ternir une peinture fragile, voire la décolorer par endroits.) Les précautions autour des cristaux de soude ne relèvent pas de l'excès de prudence : le carbonate de sodium, leur principe actif, porte la mention de danger H319, qui signale une irritation des yeux, sur le [portail des substances chimiques de l'Ineris](https://substances.ineris.fr/substance/497-19-8).
 
 ### Et le vinaigre ou le liquide vaisselle ?
 
@@ -94,7 +94,9 @@ Ces murs demandent souvent plusieurs passes, avec une eau changée très réguli
 
 ### En présence de moisissures ou d'humidité
 
-Les taches noires ou verdâtres changent la donne. Un lessivage classique ne suffit pas : un traitement fongicide doit d'abord éliminer les moisissures, puis le mur doit sécher complètement. **Si les taches reviennent, la vraie question porte sur la cause**, ventilation, infiltration ou pont thermique, plutôt que sur le produit. Notre article sur la [peinture anti-humidité](/peindre-un-mur/peinture-anti-humidite/) aide à faire le point.
+Les taches noires ou verdâtres changent la donne, car elles touchent aussi à la santé. Le ministère de la Santé conseille, dans son guide [Moisissures dans le logement](https://sante.gouv.fr/IMG/pdf/moisissures_dans_le_logement-eviter_et_traiter_vf.pdf), de nettoyer avec un produit ménager détergent, de rincer, de sécher les surfaces et d'aérer pendant toute l'opération, avec des gants et de préférence un masque FFP2 et des lunettes. Il recommande aussi aux personnes sensibles de ne pas procéder elles-mêmes au nettoyage.
+
+**Si les taches reviennent, la vraie question porte sur la cause**, ventilation, infiltration ou pont thermique, plutôt que sur le produit. L'[ARS Auvergne-Rhône-Alpes](https://www.auvergne-rhone-alpes.ars.sante.fr/moisissures-dans-le-logement-comment-agir) rappelle ainsi d'aérer chaque pièce au moins 10 minutes par jour, été comme hiver, et d'éviter de coller les meubles contre les murs froids. Notre article sur la [peinture anti-humidité](/peindre-un-mur/peinture-anti-humidite/) aide à faire le point.
 
 ### Sur une peinture mate ou fragile
 
@@ -137,3 +139,9 @@ Au moins 24 heures dans une pièce ventilée, jusqu'à 48 heures dans une pièce
 ## Et après ?
 
 Une fois le mur propre, rincé et bien sec, **il ne reste plus qu'à reboucher les petits trous et à choisir la bonne sous-couche**, deux étapes qui achèvent la préparation du support. Encore un peu de patience, donc... et le vert sauge pourra enfin trouver sa place sur le mur du salon !
+
+## Sources
+
+- Ministère de la Santé, [Moisissures dans le logement : comment les éviter et les traiter](https://sante.gouv.fr/IMG/pdf/moisissures_dans_le_logement-eviter_et_traiter_vf.pdf)
+- ARS Auvergne-Rhône-Alpes, [Moisissures dans le logement : comment agir](https://www.auvergne-rhone-alpes.ars.sante.fr/moisissures-dans-le-logement-comment-agir)
+- Ineris, [Carbonate de sodium, Portail Substances Chimiques](https://substances.ineris.fr/substance/497-19-8)

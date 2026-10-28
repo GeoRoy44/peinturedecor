@@ -21,7 +21,7 @@ En fait, la première question à se poser porte moins sur la couleur que sur le
 
 Ces durées restent des estimations pour une personne seule et un mur en bon état. (Un mur abîmé ou un plafond à reprendre peuvent facilement doubler la préparation.) Pour affiner la quantité de peinture, mieux vaut compter environ 10 m² par litre et par couche, valeur indiquée sur la plupart des fiches techniques, puis vérifier sur le pot. Notre [calculateur de quantité de peinture](/peindre-un-mur/calcul-quantite-peinture/) fait ce calcul pour vous.
 
-D'ailleurs, la météo compte aussi, même à l'intérieur. **La plupart des fabricants recommandent de peindre entre 10 et 25 °C environ**, dans une pièce aérée mais sans courant d'air violent. Au-delà de 25 °C, la peinture sèche trop vite et laisse des reprises visibles, un défaut que beaucoup de bricoleurs découvrent à leurs dépens lors d'un premier chantier estival !
+D'ailleurs, la météo compte aussi, même à l'intérieur. **La plupart des fabricants recommandent de peindre entre 10 et 25 °C environ**, dans une pièce aérée mais sans courant d'air violent. Au-delà de 25 °C, la peinture sèche trop vite et laisse des reprises visibles, un défaut que beaucoup de bricoleurs découvrent à leurs dépens lors d'un premier chantier estival ! Pendant toute la durée des travaux, le ministère de la Santé recommande aussi d'[aérer en grand au moins 10 minutes par jour, en particulier lors des activités de bricolage](https://sante.gouv.fr/sante-et-environnement/batiments/article/qualite-de-l-air-interieur-comment-agir-recommandations).
 
 ## Le matériel nécessaire pour peindre un mur
 
@@ -69,6 +69,8 @@ Le ponçage efface les surépaisseurs d'enduit et donne au mur un léger grain q
 
 Le revers, vous vous en doutez, tient à la poussière. Très volatile, elle se dépose partout et ruine la première couche si elle reste sur le mur. Un chiffon humide passé sur toute la surface, puis quelques minutes d'attente, et le support est enfin prêt.
 
+Attention quand même à un point dans les logements anciens. **Si une peinture au plomb a été repérée, mieux vaut ne pas la poncer soi-même** : France Rénov' recommande de [ne pas dégrader ces peintures et de ventiler quotidiennement les pièces concernées](https://france-renov.gouv.fr/pour-un-logement-sain/traiter-votre-logement-contre-les-risques-sanitaires). Un professionnel prend alors le relais.
+
 ## Choisir sa peinture murale
 
 Avec un mur préparé, reste à trouver le bon pot parmi des rayons entiers de références. Le choix dépend de trois critères : la pièce, l'état du mur et l'effet recherché. **Une même couleur peut paraître très différente selon sa finition**, et c'est souvent elle qu'on regrette quand le résultat déçoit.
@@ -86,6 +88,10 @@ En gros, un mur un peu fatigué gagne à recevoir une finition mate, tandis qu'u
 ### Peinture acrylique ou glycéro
 
 Pour les murs intérieurs, la peinture acrylique, dite peinture à l'eau, s'est largement imposée. Elle sèche vite, dégage peu d'odeur et se nettoie à l'eau, ce qui simplifie franchement le chantier. **La glycéro, à base de solvant, reste surtout utilisée pour les boiseries ou certains supports techniques**, avec une odeur plus forte et un séchage plus long. Le comparatif [peinture glycéro ou acrylique](/meilleure-peinture-interieure/peinture-glycero-ou-acrylique/) aide à trancher selon votre support.
+
+### L'étiquette d'émissions, de A+ à C
+
+Sur chaque pot, une petite étiquette indique le niveau d'émission en polluants volatils une fois la peinture appliquée. Selon le [ministère de la Santé](https://sante.gouv.fr/sante-et-environnement/batiments/article/qualite-de-l-air-interieur-comment-agir-recommandations), cette obligation s'applique aux nouveaux produits depuis le 1er janvier 2012, puis à l'ensemble des produits mis sur le marché depuis le 1er janvier 2013, sur une échelle de quatre classes. **Une peinture classée A+ émet très peu de polluants**, un critère utile dans une chambre d'enfant ou une pièce peu aérée. Le cadre légal figure dans le [décret n° 2011-321 du 23 mars 2011](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000023759679/2024-05-31) relatif à l'étiquetage des peintures.
 
 ### Les marques que l'on croise en magasin
 
@@ -195,3 +201,9 @@ En préparant la veille, tout simplement. Protection, lessivage, rebouchage et p
 ## Et le plafond ?
 
 Une fois les murs terminés, le regard monte souvent vers le plafond, qui paraît soudain un peu terne à côté de ses murs tout neufs. Bonne nouvelle, la méthode reste proche, avec quelques gestes spécifiques pour éviter les éclaboussures et les traces. Notre guide pour [peindre un plafond sans traces](/peindre-un-mur/peindre-un-plafond/) vous attend pour le prochain week-end !
+
+## Sources
+
+- Ministère de la Santé, [Qualité de l'air intérieur : comment agir ? Recommandations](https://sante.gouv.fr/sante-et-environnement/batiments/article/qualite-de-l-air-interieur-comment-agir-recommandations)
+- Légifrance, [Décret n° 2011-321 du 23 mars 2011 relatif à l'étiquetage des produits de construction ou de revêtement de mur ou de sol et des peintures](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000023759679/2024-05-31)
+- France Rénov', [Traiter votre logement contre les risques sanitaires](https://france-renov.gouv.fr/pour-un-logement-sain/traiter-votre-logement-contre-les-risques-sanitaires)
