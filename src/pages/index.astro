@@ -2,8 +2,11 @@
 import Base from '../layouts/Base.astro';
 import HeroAnime from '../components/HeroAnime.astro';
 import { categories } from '../data/categories';
+
+const verification = '<!-- 945a170f8e111bebc668b7655b27c7be -->';
 ---
 <Base title="PeintureDécor.fr – Peindre, décorer, trouver un peintre" description="Méthodes pour peindre un mur, peinture décorative, comparatifs, façade et annuaire de peintres : tous nos guides.">
+  <Fragment set:html={verification} />
   <HeroAnime
     kicker="Peinture & décoration intérieure"
     titre="Donnez de la matière à vos murs"
