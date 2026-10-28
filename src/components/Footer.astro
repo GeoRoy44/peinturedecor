@@ -1,5 +1,6 @@
 ---
 import { categories } from '../data/categories';
+import { outils } from '../data/outils';
 const annee = new Date().getFullYear();
 ---
 <footer class="footer">
@@ -7,6 +8,9 @@ const annee = new Date().getFullYear();
     <p>© {annee} PeintureDécor.fr – Guides peinture et décoration intérieure</p>
     <nav aria-label="Catégories">
       {categories.map((c) => <a href={`/${c.slug}/`}>{c.titre} </a>)}
+    </nav>
+    <nav aria-label="Outils">
+      {outils.map((o) => <a href={o.url}>{o.titre} </a>)}
     </nav>
   </div>
 </footer>

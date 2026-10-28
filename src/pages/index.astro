@@ -1,7 +1,9 @@
 ---
 import Base from '../layouts/Base.astro';
 import HeroAnime from '../components/HeroAnime.astro';
+import '../styles/outils.css';
 import { categories } from '../data/categories';
+import { outils } from '../data/outils';
 import { getArticles, urlArticle } from '../lib/articles';
 
 const verification = '<!-- 945a170f8e111bebc668b7655b27c7be -->';
@@ -96,6 +98,21 @@ const jsonLd = JSON.stringify([
     </div>
   </section>
 
+  <section class="section">
+    <div class="container outils-liste">
+      {outils.map((o) => (
+        <div class="outil-promo reveal" data-reveal>
+          <div class="outil-promo__texte">
+            <span class="hero__kicker">Outil gratuit</span>
+            <h2>{o.accroche}</h2>
+            <p>{o.description} <strong>De quoi trancher entre deux teintes en quelques secondes.</strong></p>
+          </div>
+          <a href={o.url} class="btn btn--sauge">{o.cta} <span class="btn__fleche" aria-hidden="true">→</span></a>
+        </div>
+      ))}
+    </div>
+  </section>
+
   {articles.length > 0 && (
     <section class="section">
       <div class="container">
@@ -124,7 +141,7 @@ const jsonLd = JSON.stringify([
         <p>Comment sont construits nos guides ? Chaque méthode suit l'ordre d'un vrai chantier : préparer, protéger, appliquer, puis contrôler. D'ailleurs, le guide pour <a href="/peindre-un-mur/lessivage-mur/">lessiver un mur avant de peindre</a> et celui sur <a href="/peindre-un-mur/enduit-de-lissage/">l'enduit de lissage</a> passent avant toute question de couleur. <strong>Les affirmations techniques s'appuient sur des textes officiels</strong>, pas sur des argumentaires de marques.</p>
         <p>Prenons l'étiquette d'émissions dans l'air intérieur. Elle figure sur les peintures d'intérieur vendues en France et classe les produits de A+ à C, selon le <a href="https://www.ecologie.gouv.fr/politiques-publiques/etiquetage-produits-construction" rel="noopener">ministère de la Transition écologique</a>. Ce dispositif découle de l'<a href="https://www.legifrance.gouv.fr/loda/id/JORFTEXT000023991852/" rel="noopener">arrêté du 19 avril 2011</a>. <strong>Une classe A+ correspond à de très faibles émissions</strong>, un repère simple pour une chambre d'enfant.</p>
         <p>Attention quand même à un point dans l'ancien. Pour un logement construit avant le 1er janvier 1949, un constat de risque d'exposition au plomb est exigé à la vente comme à la location, rappelle le <a href="https://sante.gouv.fr/sante-et-environnement/batiments/article/dispositif-de-prevention-des-risques-sanitaires-lies-au-plomb" rel="noopener">ministère de la Santé</a>. <strong>Mieux vaut connaître la composition d'une vieille peinture avant de la poncer.</strong></p>
-        <p>Envie de matière plutôt que d'aplat ? Les <a href="/peinture-decorative/">enduits et effets de peinture décorative</a> ont leur propre univers. Pour le choix d'une marque ou d'une finition, nos <a href="/meilleure-peinture-interieure/">comparatifs de peintures pour l'intérieur</a> prennent le relais. <strong>Chaque comparatif annonce ses critères</strong> avant de donner un avis.</p>
+        <p>Envie de matière plutôt que d'aplat ? Les <a href="/peinture-decorative/">enduits et effets de peinture décorative</a> ont leur propre univers. Pour le choix d'une marque ou d'une finition, nos <a href="/meilleure-peinture-interieure/">comparatifs de peintures pour l'intérieur</a> prennent le relais, et le <a href="/meilleure-peinture-interieure/simulateur-peinture/">simulateur peinture</a> aide à visualiser une teinte avant l'achat. <strong>Chaque comparatif annonce ses critères</strong> avant de donner un avis.</p>
         <p>Soyons clairs sur nos limites. PeintureDécor est édité par Geoffrey Royer, consultant SEO à Nantes, qui n'est pas peintre. Les guides rassemblent des méthodes documentées et des sources vérifiables. <strong>Pour un chantier complexe, l'avis d'un professionnel sur place reste préférable.</strong></p>
         <div class="sources">
           <p class="sources__titre">Sources consultées</p>

@@ -73,7 +73,7 @@ Attention quand même à un point dans les logements anciens. **Si une peinture 
 
 ## Choisir sa peinture murale
 
-Avec un mur préparé, reste à trouver le bon pot parmi des rayons entiers de références. Le choix dépend de trois critères : la pièce, l'état du mur et l'effet recherché. **Une même couleur peut paraître très différente selon sa finition**, et c'est souvent elle qu'on regrette quand le résultat déçoit.
+Avec un mur préparé, reste à trouver le bon pot parmi des rayons entiers de références. Le choix dépend de trois critères : la pièce, l'état du mur et l'effet recherché. **Une même couleur peut paraître très différente selon sa finition**, et c'est souvent elle qu'on regrette quand le résultat déçoit. Et si vous hésitez encore entre deux teintes, notre [simulateur peinture](/meilleure-peinture-interieure/simulateur-peinture/) permet de les comparer sur une pièce complète avant d'acheter.
 
 ### Mate, velours ou satinée selon la pièce
 

@@ -2,8 +2,10 @@
 import Base from '../../layouts/Base.astro';
 import HeroAnime from '../../components/HeroAnime.astro';
 import '../../styles/article.css';
+import '../../styles/outils.css';
 import { getCollection, render } from 'astro:content';
 import { categories, type Categorie } from '../../data/categories';
+import { outilsDe } from '../../data/outils';
 import { getArticles, urlArticle } from '../../lib/articles';
 
 export function getStaticPaths() {
@@ -13,6 +15,7 @@ export function getStaticPaths() {
 const { cat } = Astro.props as { cat: Categorie };
 const autres = categories.filter((c) => c.slug !== cat.slug);
 const articles = await getArticles(cat.slug);
+const outilsCat = outilsDe(cat.slug);
 const mere = (await getCollection('meres')).find((m) => m.id === cat.slug);
 const Contenu = mere ? (await render(mere)).Content : null;
 const titreSeo = mere ? mere.data.seoTitle : `${cat.titre} – PeintureDécor.fr`;
@@ -31,9 +34,29 @@ const h1 = mere ? mere.data.h1 : cat.h1;
       </div>
     </section>
   )}
+  {outilsCat.length > 0 && (
+    <section class="section">
+      <div class="container">
+        {!Contenu && <nav class="fil" aria-label="Fil d'Ariane"><a href="/">Accueil</a> / {cat.titre}</nav>}
+        <h2>Nos outils</h2>
+        <div class="outils-liste">
+          {outilsCat.map((o) => (
+            <div class="outil-promo">
+              <div class="outil-promo__texte">
+                <span class="hero__kicker">{o.titre}</span>
+                <h3>{o.accroche}</h3>
+                <p>{o.description}</p>
+              </div>
+              <a href={o.url} class="btn btn--sauge">{o.cta} <span class="btn__fleche" aria-hidden="true">→</span></a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
   <section id="guides" class="section">
     <div class="container">
-      {!Contenu && <nav class="fil" aria-label="Fil d'Ariane"><a href="/">Accueil</a> / {cat.titre}</nav>}
+      {!Contenu && outilsCat.length === 0 && <nav class="fil" aria-label="Fil d'Ariane"><a href="/">Accueil</a> / {cat.titre}</nav>}
       <h2>Guides {cat.titre.toLowerCase()}</h2>
       {articles.length > 0 ? (
         <div class="cartes">

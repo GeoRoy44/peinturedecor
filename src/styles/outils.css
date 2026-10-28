@@ -1,0 +1,10 @@
+.outils-liste { display: grid; gap: 1.2rem; }
+.outil-promo { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem; padding: 2.2rem; border-radius: var(--radius-lg); background: #fff; box-shadow: var(--shadow); border-left: 6px solid var(--terracotta); }
+.outil-promo__texte { flex: 1 1 420px; }
+.outil-promo__texte h2, .outil-promo__texte h3 { margin: .2rem 0 .6rem; }
+.outil-promo__texte p { margin: 0; max-width: 60ch; }
+
+@media (max-width: 600px) {
+  .outil-promo { padding: 1.5rem; border-left-width: 4px; }
+  .outil-promo .btn { width: 100%; }
+}
