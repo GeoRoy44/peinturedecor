@@ -1,9 +1,11 @@
 ---
+import type { Variante } from '../data/categories';
+
 interface Props {
   kicker: string;
   titre: string;
   intro: string;
-  variante?: 'terracotta' | 'sauge' | 'sable' | 'beton';
+  variante?: Variante;
   ctaLabel?: string;
   ctaHref?: string;
 }
@@ -23,7 +25,7 @@ const couleurs = {
       <p class="hero__intro">{intro}</p>
       <div class="hero__actions">
         <a href={ctaHref} class="btn">{ctaLabel} <span class="btn__fleche" aria-hidden="true">→</span></a>
-        <a href="/couleurs-et-tendances/" class="btn btn--ghost">Nuancier & tendances</a>
+        <a href="/peintre-en-batiment/" class="btn btn--ghost">Trouver un peintre</a>
       </div>
     </div>
     <div class="hero__visuel" role="img" aria-label="Illustration animée d'un mur en cours de peinture">
