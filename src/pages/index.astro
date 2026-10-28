@@ -1,9 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
 import HeroAnime from '../components/HeroAnime.astro';
-import '../styles/outils.css';
+import SimulateurMini from '../components/SimulateurMini.astro';
 import { categories } from '../data/categories';
-import { outils } from '../data/outils';
 import { getArticles, urlArticle } from '../lib/articles';
 
 const verification = '<!-- 945a170f8e111bebc668b7655b27c7be -->';
@@ -48,6 +47,8 @@ const jsonLd = JSON.stringify([
     ctaLabel="Lire le guide pour peindre un mur"
     ctaHref="/peindre-un-mur/"
   />
+
+  <SimulateurMini />
 
   <section id="guides" class="section">
     <div class="container">
@@ -95,21 +96,6 @@ const jsonLd = JSON.stringify([
           <p>Une lampe en lumière rasante révèle les manques tant que la peinture reste fraîche.</p>
         </li>
       </ol>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container outils-liste">
-      {outils.map((o) => (
-        <div class="outil-promo reveal" data-reveal>
-          <div class="outil-promo__texte">
-            <span class="hero__kicker">Outil gratuit</span>
-            <h2>{o.accroche}</h2>
-            <p>{o.description} <strong>De quoi trancher entre deux teintes en quelques secondes.</strong></p>
-          </div>
-          <a href={o.url} class="btn btn--sauge">{o.cta} <span class="btn__fleche" aria-hidden="true">→</span></a>
-        </div>
-      ))}
     </div>
   </section>
 

@@ -1,0 +1,88 @@
+---
+import '../styles/simulateur-mini.css';
+
+const url = '/meilleure-peinture-interieure/simulateur-peinture/';
+const surfaces = [
+  { id: 'mur-a', nom: 'Mur' },
+  { id: 'menuiseries', nom: 'Fenêtre et porte' },
+  { id: 'canape', nom: 'Canapé' }
+];
+const teintes = ['#C0603F', '#8A9A7B', '#1F2F4A', '#C8913E', '#E9EAE6', '#F5F1EA', '#5C6B5A', '#2B2622'];
+---
+<section class="section simu-mini-section" aria-labelledby="simu-mini-titre">
+  <div class="container">
+    <div class="simu-mini" data-simu-mini>
+      <div class="simu-mini__texte">
+        <span class="hero__kicker">Outil gratuit</span>
+        <h2 id="simu-mini-titre">Essayez une couleur sur ce mur</h2>
+        <p>Choisissez une surface, puis une teinte. <strong>Le rendu change instantanément.</strong></p>
+        <div class="simu-mini__surfaces" role="radiogroup" aria-label="Surface à peindre">
+          {surfaces.map((s, i) => (
+            <button type="button" class="simu-mini__surface" role="radio" aria-checked={i === 0 ? 'true' : 'false'} data-cible={s.id}>{s.nom}</button>
+          ))}
+        </div>
+        <div class="simu-mini__teintes">
+          {teintes.map((hex) => (
+            <button type="button" class="simu-mini__teinte" data-hex={hex} aria-pressed="false" aria-label={`Teinte ${hex}`}>
+              <svg viewBox="0 0 10 10" aria-hidden="true"><rect width="10" height="10" rx="3" fill={hex} /></svg>
+            </button>
+          ))}
+        </div>
+        <a class="btn btn--sauge" href={url} data-lien>Ouvrir le simulateur complet <span class="btn__fleche" aria-hidden="true">→</span></a>
+      </div>
+      <svg class="simu-mini__svg" viewBox="0 0 600 400" role="img" aria-label="Mur de salon à colorer">
+        <rect class="simu-mini__zone" data-zone="mur-a" x="0" y="0" width="600" height="330" fill="#C0603F" />
+        <rect class="simu-mini__deco" x="0" y="330" width="600" height="70" fill="#A89F91" />
+        <rect class="simu-mini__deco" x="0" y="318" width="600" height="12" fill="#F5F1EA" />
+        <rect class="simu-mini__zone" data-zone="menuiseries" x="60" y="60" width="140" height="170" rx="4" fill="#2B2622" />
+        <rect class="simu-mini__deco" x="72" y="72" width="116" height="146" fill="#CFE3EC" />
+        <rect class="simu-mini__zone" data-zone="menuiseries" x="460" y="100" width="100" height="218" rx="3" fill="#2B2622" />
+        <circle class="simu-mini__deco" cx="545" cy="215" r="5" fill="#F5F1EA" />
+        <rect class="simu-mini__zone" data-zone="canape" x="230" y="230" width="170" height="55" rx="12" fill="#5C6B5A" />
+        <rect class="simu-mini__zone" data-zone="canape" x="212" y="252" width="32" height="66" rx="10" fill="#5C6B5A" />
+        <rect class="simu-mini__zone" data-zone="canape" x="386" y="252" width="32" height="66" rx="10" fill="#5C6B5A" />
+        <rect class="simu-mini__zone" data-zone="canape" x="230" y="275" width="170" height="43" rx="8" fill="#5C6B5A" />
+        <rect class="simu-mini__deco" x="230" y="298" width="170" height="20" rx="8" fill="#000" fill-opacity=".12" />
+      </svg>
+    </div>
+  </div>
+</section>
+
+<script>
+  const racine = document.querySelector<HTMLElement>('[data-simu-mini]');
+  if (racine) {
+    const etat: Record<string, string> = {
+      'mur-a': '#C0603F',
+      'mur-b': '#F5F1EA',
+      sol: '#A89F91',
+      plinthes: '#F5F1EA',
+      menuiseries: '#2B2622',
+      canape: '#5C6B5A'
+    };
+    let cible = 'mur-a';
+    const lien = racine.querySelector<HTMLAnchorElement>('[data-lien]');
+    const base = lien?.getAttribute('href') ?? '';
+
+    const maj = () => {
+      racine.querySelectorAll<SVGElement>('[data-zone]').forEach((z) => z.setAttribute('fill', etat[z.dataset.zone ?? ''] ?? '#CCCCCC'));
+      racine.querySelectorAll<HTMLElement>('[data-hex]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.hex === etat[cible])));
+      racine.querySelectorAll<HTMLElement>('[data-cible]').forEach((b) => b.setAttribute('aria-checked', String(b.dataset.cible === cible)));
+      if (lien) lien.href = `${base}#${Object.entries(etat).map(([k, v]) => `${k}=${v.slice(1)}`).join('&')}`;
+    };
+
+    racine.querySelectorAll<HTMLElement>('[data-cible]').forEach((b) => b.addEventListener('click', () => {
+      cible = b.dataset.cible ?? 'mur-a';
+      maj();
+    }));
+    racine.querySelectorAll<SVGElement>('[data-zone]').forEach((z) => z.addEventListener('click', () => {
+      cible = z.dataset.zone ?? 'mur-a';
+      maj();
+    }));
+    racine.querySelectorAll<HTMLElement>('[data-hex]').forEach((b) => b.addEventListener('click', () => {
+      etat[cible] = b.dataset.hex ?? etat[cible];
+      maj();
+    }));
+
+    maj();
+  }
+</script>
