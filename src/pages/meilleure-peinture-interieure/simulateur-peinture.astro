@@ -1,0 +1,58 @@
+---
+import Base from '../../layouts/Base.astro';
+import '../../styles/article.css';
+import SimulateurPiece from '../../components/SimulateurPiece.astro';
+
+const url = 'https://peinturedecor.fr/meilleure-peinture-interieure/simulateur-peinture/';
+const jsonLd = JSON.stringify([
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://peinturedecor.fr/' },
+      { '@type': 'ListItem', position: 2, name: 'Outils & comparatifs', item: 'https://peinturedecor.fr/meilleure-peinture-interieure/' },
+      { '@type': 'ListItem', position: 3, name: 'Simulateur peinture', item: url }
+    ]
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: 'Simulateur peinture PeintureDécor',
+    url,
+    applicationCategory: 'DesignApplication',
+    operatingSystem: 'Navigateur web',
+    inLanguage: 'fr-FR',
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' }
+  }
+]);
+---
+<Base title="Simulateur peinture : testez vos couleurs sur une pièce | PeintureDécor" description="Simulateur peinture gratuit : choisissez une ambiance ou une teinte, colorez murs, sol, plinthes et canapé, puis comparez en vue 3D ou 2D avant d'acheter.">
+  <script type="application/ld+json" set:html={jsonLd} />
+  <section class="section">
+    <div class="container">
+      <nav class="fil" aria-label="Fil d'Ariane">
+        <a href="/">Accueil</a> / <a href="/meilleure-peinture-interieure/">Outils & comparatifs</a> / Simulateur peinture
+      </nav>
+      <header class="article__entete">
+        <span class="hero__kicker">Outils & comparatifs</span>
+        <h1>Simulateur peinture : testez vos couleurs sur une pièce</h1>
+        <p class="simu-intro">Terracotta au mur, sauge sur le canapé, plinthes blanches ou assorties ? Avant d'acheter le moindre pot, vous pouvez <strong>composer votre pièce en quelques clics</strong>, en vue 3D comme en vue de face.</p>
+      </header>
+
+      <SimulateurPiece />
+
+      <div class="article prose simu-texte">
+        <h2>Comment utiliser le simulateur</h2>
+        <ol>
+          <li>Un clic sur une surface du dessin, ou sur son bouton, la sélectionne.</li>
+          <li>Une ambiance colore toute la pièce d'un coup, une teinte du nuancier ne change que la surface choisie.</li>
+          <li>La teinte libre ouvre le sélecteur de couleur de votre appareil.</li>
+          <li>Le bouton « Copier le lien » garde vos couleurs dans l'adresse, pratique pour les montrer à quelqu'un.</li>
+        </ol>
+        <h2>Ce qu'un écran ne dira jamais</h2>
+        <p>Soyons clairs, un simulateur donne une direction, pas un rendu fidèle. <strong>Chaque écran affiche les couleurs à sa façon</strong>, et la lumière de votre pièce change encore la donne entre le matin et le soir. Mieux vaut donc tester un échantillon directement sur le mur, sur une surface d'au moins une feuille A4, avant de lancer le chantier.</p>
+        <p>Une fois la teinte trouvée, la <a href="/peindre-un-mur/">méthode complète pour peindre un mur</a> prend le relais, et nos <a href="/meilleure-peinture-interieure/">comparatifs de peintures intérieures</a> aident à choisir la finition.</p>
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,247 @@
+---
+import '../styles/simulateur.css';
+---
+<section class="simu" data-simu aria-label="Simulateur de couleurs de peinture">
+  <div class="simu__scene">
+    <div class="simu__vues" role="group" aria-label="Type de vue">
+      <button type="button" class="simu__vue est-active" data-vue="3d" aria-pressed="true">Vue 3D</button>
+      <button type="button" class="simu__vue" data-vue="2d" aria-pressed="false">Vue 2D</button>
+    </div>
+
+    <svg class="simu__svg" data-vue-svg="3d" viewBox="0 0 600 470" role="img" aria-label="Pièce en perspective à colorer">
+      <polygon class="zone" data-surface="mur-b" points="40,140 300,20 300,260 40,380" fill="#F5F1EA" />
+      <polygon class="ombre" points="40,140 300,20 300,260 40,380" fill="#000" fill-opacity=".06" />
+      <polygon class="zone" data-surface="mur-a" points="300,20 560,140 560,380 300,260" fill="#C0603F" />
+      <polygon class="zone" data-surface="sol" points="40,380 300,260 560,380 300,500" fill="#A89F91" />
+      <polygon class="ombre" points="40,380 300,260 560,380 300,500" fill="#000" fill-opacity=".08" />
+      <polygon class="zone" data-surface="plinthes" points="40,380 300,260 300,248 40,368" fill="#F5F1EA" />
+      <polygon class="zone" data-surface="plinthes" points="300,260 560,380 560,368 300,248" fill="#F5F1EA" />
+      <polygon class="zone" data-surface="menuiseries" points="131,158 209,122 209,232 131,268" fill="#2B2622" />
+      <polygon class="ombre" points="139,160 201,132 201,226 139,254" fill="#CFE3EC" />
+      <polygon class="zone" data-surface="menuiseries" points="456,162 508,186 508,356 456,332" fill="#2B2622" />
+      <circle class="ombre" cx="498" cy="272" r="3.5" fill="#F5F1EA" />
+      <polygon class="zone" data-surface="canape" points="325,245 455,305 455,345 325,285" fill="#5C6B5A" />
+      <polygon class="ombre" points="325,245 455,305 455,345 325,285" fill="#000" fill-opacity=".05" />
+      <polygon class="zone" data-surface="canape" points="325,285 455,345 405,368 275,308" fill="#5C6B5A" />
+      <polygon class="zone" data-surface="canape" points="405,368 455,345 455,370 405,393" fill="#5C6B5A" />
+      <polygon class="ombre" points="405,368 455,345 455,370 405,393" fill="#000" fill-opacity=".1" />
+      <polygon class="zone" data-surface="canape" points="275,308 405,368 405,393 275,333" fill="#5C6B5A" />
+      <polygon class="ombre" points="275,308 405,368 405,393 275,333" fill="#000" fill-opacity=".18" />
+    </svg>
+
+    <svg class="simu__svg" data-vue-svg="2d" viewBox="0 0 600 460" role="img" aria-label="Mur principal vu de face à colorer" hidden>
+      <rect class="zone" data-surface="mur-a" x="0" y="0" width="600" height="380" fill="#C0603F" />
+      <rect class="zone" data-surface="sol" x="0" y="380" width="600" height="80" fill="#A89F91" />
+      <rect class="ombre" x="0" y="380" width="600" height="80" fill="#000" fill-opacity=".08" />
+      <rect class="zone" data-surface="plinthes" x="0" y="366" width="600" height="14" fill="#F5F1EA" />
+      <rect class="zone" data-surface="menuiseries" x="70" y="80" width="150" height="180" rx="4" fill="#2B2622" />
+      <rect class="ombre" x="82" y="92" width="126" height="156" fill="#CFE3EC" />
+      <rect class="zone" data-surface="menuiseries" x="440" y="120" width="110" height="246" rx="3" fill="#2B2622" />
+      <circle class="ombre" cx="534" cy="250" r="5" fill="#F5F1EA" />
+      <rect class="zone" data-surface="canape" x="225" y="270" width="180" height="60" rx="12" fill="#5C6B5A" />
+      <rect class="zone" data-surface="canape" x="205" y="295" width="34" height="70" rx="10" fill="#5C6B5A" />
+      <rect class="zone" data-surface="canape" x="391" y="295" width="34" height="70" rx="10" fill="#5C6B5A" />
+      <rect class="zone" data-surface="canape" x="225" y="318" width="180" height="46" rx="8" fill="#5C6B5A" />
+      <rect class="ombre" x="225" y="342" width="180" height="22" rx="8" fill="#000" fill-opacity=".12" />
+    </svg>
+  </div>
+
+  <div class="simu__panneau">
+    <h3>1. Choisissez une surface</h3>
+    <div class="simu__surfaces" role="radiogroup" aria-label="Surface à peindre" data-surfaces></div>
+
+    <h3>2. Testez une ambiance ou une teinte</h3>
+    <div class="simu__ambiances" data-ambiances></div>
+    <div class="simu__nuancier" data-nuancier></div>
+    <label class="simu__perso">Teinte libre <input type="color" data-perso value="#C0603F" /></label>
+
+    <p class="simu__info" aria-live="polite" data-info></p>
+
+    <div class="simu__actions">
+      <button type="button" class="btn btn--ghost" data-action="hasard">Ambiance au hasard</button>
+      <button type="button" class="btn btn--ghost" data-action="reset">Réinitialiser</button>
+      <button type="button" class="btn" data-action="partager">Copier le lien</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  const racine = document.querySelector<HTMLElement>('[data-simu]');
+  if (racine) {
+    const NS = 'http://www.w3.org/2000/svg';
+    const SURFACES = [
+      { id: 'mur-a', nom: 'Mur principal' },
+      { id: 'mur-b', nom: 'Mur latéral' },
+      { id: 'sol', nom: 'Sol' },
+      { id: 'plinthes', nom: 'Plinthes' },
+      { id: 'menuiseries', nom: 'Portes et fenêtre' },
+      { id: 'canape', nom: 'Canapé' }
+    ];
+    type Etat = Record<string, string>;
+    const AMBIANCES: { nom: string; c: Etat }[] = [
+      { nom: 'Chaux & Terracotta', c: { 'mur-a': '#C0603F', 'mur-b': '#F5F1EA', sol: '#A89F91', plinthes: '#F5F1EA', menuiseries: '#2B2622', canape: '#5C6B5A' } },
+      { nom: 'Sauge & lin', c: { 'mur-a': '#8A9A7B', 'mur-b': '#EDE6DA', sol: '#B89B7A', plinthes: '#FFFFFF', menuiseries: '#FFFFFF', canape: '#D9CBB4' } },
+      { nom: 'Nordique', c: { 'mur-a': '#E9EAE6', 'mur-b': '#D3D6D2', sol: '#D8C3A5', plinthes: '#FFFFFF', menuiseries: '#FFFFFF', canape: '#7A8590' } },
+      { nom: 'Bleu nuit', c: { 'mur-a': '#1F2F4A', 'mur-b': '#F2EEE7', sol: '#9C7A5B', plinthes: '#F2EEE7', menuiseries: '#C9A36A', canape: '#E3D5C0' } },
+      { nom: 'Ocre du Sud', c: { 'mur-a': '#C8913E', 'mur-b': '#F3E9D8', sol: '#B5643F', plinthes: '#F3E9D8', menuiseries: '#3E5A6B', canape: '#F3E9D8' } }
+    ];
+    const NUANCES = [...new Set(AMBIANCES.flatMap((a) => Object.values(a.c)).concat(['#D98A6A', '#E3B7A0', '#6E8B8F', '#4A3F35']))];
+    const DEFAUT: Etat = { ...AMBIANCES[0].c };
+    const valide = (h: string) => /^#[0-9A-F]{6}$/i.test(h);
+
+    const lireEtat = (): Etat | null => {
+      let src = location.hash.slice(1);
+      if (!src) { try { src = localStorage.getItem('pd-simu') ?? ''; } catch { src = ''; } }
+      if (!src) return null;
+      const p = new URLSearchParams(src);
+      const e: Etat = {};
+      for (const s of SURFACES) {
+        const v = `#${p.get(s.id) ?? ''}`.toUpperCase();
+        if (!valide(v)) return null;
+        e[s.id] = v;
+      }
+      return e;
+    };
+    const encoder = () => SURFACES.map((s) => `${s.id}=${etat[s.id].slice(1)}`).join('&');
+
+    let etat: Etat = lireEtat() ?? { ...DEFAUT };
+    let active = 'mur-a';
+    let vue = '3d';
+    const info = racine.querySelector('[data-info]') as HTMLElement;
+    const perso = racine.querySelector('[data-perso]') as HTMLInputElement;
+
+    const pastille = (couleurs: string[], cls: string) => {
+      const svg = document.createElementNS(NS, 'svg');
+      svg.setAttribute('class', cls);
+      svg.setAttribute('viewBox', `0 0 ${couleurs.length * 10} 10`);
+      svg.setAttribute('aria-hidden', 'true');
+      couleurs.forEach((c, i) => {
+        const r = document.createElementNS(NS, 'rect');
+        r.setAttribute('x', String(i * 10));
+        r.setAttribute('width', '10');
+        r.setAttribute('height', '10');
+        r.setAttribute('rx', couleurs.length === 1 ? '3' : '0');
+        r.setAttribute('fill', c);
+        svg.appendChild(r);
+      });
+      return svg;
+    };
+
+    const refs: Record<string, SVGRectElement> = {};
+    const zoneSurfaces = racine.querySelector('[data-surfaces]') as HTMLElement;
+    SURFACES.forEach((s) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'simu__surface';
+      b.setAttribute('role', 'radio');
+      b.dataset.surface = s.id;
+      const p = pastille([etat[s.id]], 'pastille');
+      refs[s.id] = p.querySelector('rect') as SVGRectElement;
+      b.append(p, document.createTextNode(s.nom));
+      b.addEventListener('click', () => selectionner(s.id));
+      zoneSurfaces.appendChild(b);
+    });
+
+    const zoneAmbiances = racine.querySelector('[data-ambiances]') as HTMLElement;
+    AMBIANCES.forEach((a) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'simu__ambiance';
+      b.append(pastille(Object.values(a.c), 'mini'), document.createTextNode(a.nom));
+      b.addEventListener('click', () => { etat = { ...a.c }; appliquer(); conseil(`Ambiance « ${a.nom} » appliquée.`); });
+      zoneAmbiances.appendChild(b);
+    });
+
+    const zoneNuancier = racine.querySelector('[data-nuancier]') as HTMLElement;
+    NUANCES.forEach((hex) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'teinte';
+      b.dataset.hex = hex;
+      b.setAttribute('aria-label', `Teinte ${hex}`);
+      b.appendChild(pastille([hex], 'teinte__svg'));
+      b.addEventListener('click', () => colorer(hex));
+      zoneNuancier.appendChild(b);
+    });
+
+    const luminance = (hex: string) => {
+      const [r, g, b] = [1, 3, 5]
+        .map((i) => parseInt(hex.slice(i, i + 2), 16) / 255)
+        .map((v) => (v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4));
+      return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+    };
+
+    function conseil(prefixe = '') {
+      const hex = etat[active];
+      const nom = SURFACES.find((s) => s.id === active)?.nom ?? '';
+      const l = luminance(hex);
+      let txt = l > 0.6
+        ? 'Teinte claire : elle renvoie la lumière et agrandit visuellement la pièce.'
+        : l < 0.12
+          ? "Teinte profonde : idéale en mur d'accent, à équilibrer avec des surfaces claires."
+          : "Teinte médiane : elle structure la pièce sans l'assombrir.";
+      if (active === 'mur-b' && vue === '2d') txt += " Ce mur n'apparaît qu'en vue 3D.";
+      info.textContent = `${prefixe ? prefixe + ' ' : ''}${nom} · ${hex} · ${txt}`;
+    }
+
+    function appliquer() {
+      racine!.querySelectorAll<SVGElement>('.zone').forEach((z) => z.setAttribute('fill', etat[z.dataset.surface ?? ''] ?? '#CCCCCC'));
+      SURFACES.forEach((s) => refs[s.id].setAttribute('fill', etat[s.id]));
+      racine!.querySelectorAll<HTMLElement>('.teinte').forEach((t) => t.classList.toggle('est-active', t.dataset.hex === etat[active]));
+      perso.value = etat[active].toLowerCase();
+      history.replaceState(null, '', `#${encoder()}`);
+      try { localStorage.setItem('pd-simu', encoder()); } catch { /* stockage indisponible */ }
+    }
+
+    function selectionner(id: string) {
+      active = id;
+      racine!.querySelectorAll<HTMLElement>('.simu__surface').forEach((b) => b.setAttribute('aria-checked', String(b.dataset.surface === id)));
+      racine!.querySelectorAll<SVGElement>('.zone').forEach((z) => z.classList.toggle('est-selectionnee', z.dataset.surface === id));
+      appliquer();
+      conseil();
+    }
+
+    function colorer(hex: string) {
+      etat[active] = hex.toUpperCase();
+      appliquer();
+      conseil();
+    }
+
+    racine.querySelectorAll<SVGElement>('.zone').forEach((z) => z.addEventListener('click', () => selectionner(z.dataset.surface ?? 'mur-a')));
+    perso.addEventListener('input', () => colorer(perso.value));
+
+    racine.querySelectorAll<HTMLButtonElement>('[data-vue]').forEach((b) => b.addEventListener('click', () => {
+      vue = b.dataset.vue ?? '3d';
+      racine!.querySelectorAll<HTMLButtonElement>('[data-vue]').forEach((x) => {
+        const on = x === b;
+        x.classList.toggle('est-active', on);
+        x.setAttribute('aria-pressed', String(on));
+      });
+      racine!.querySelectorAll<SVGSVGElement>('[data-vue-svg]').forEach((s) => s.toggleAttribute('hidden', s.dataset.vueSvg !== vue));
+      conseil();
+    }));
+
+    racine.querySelector('[data-action="hasard"]')?.addEventListener('click', () => {
+      const a = AMBIANCES[Math.floor(Math.random() * AMBIANCES.length)];
+      etat = { ...a.c };
+      if (Math.random() > 0.5) [etat['mur-a'], etat['mur-b']] = [etat['mur-b'], etat['mur-a']];
+      appliquer();
+      conseil(`Tirage : « ${a.nom} ».`);
+    });
+    racine.querySelector('[data-action="reset"]')?.addEventListener('click', () => {
+      etat = { ...DEFAUT };
+      appliquer();
+      conseil('Couleurs réinitialisées.');
+    });
+    racine.querySelector('[data-action="partager"]')?.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        info.textContent = 'Lien copié : vos couleurs sont enregistrées dans cette adresse.';
+      } catch {
+        window.prompt('Copiez ce lien :', location.href);
+      }
+    });
+
+    selectionner('mur-a');
+  }
+</script>
