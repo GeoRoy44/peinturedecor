@@ -1,0 +1,70 @@
+---
+import Base from '../layouts/Base.astro';
+import { categories } from '../data/categories';
+import { outils } from '../data/outils';
+import { getArticles, urlArticle } from '../lib/articles';
+
+type Lien = { url: string; titre: string };
+const liens = new Map<string, Lien>();
+const ajouter = (url: string, titre: string) => liens.set(url, { url, titre });
+ajouter('/', 'Accueil');
+ajouter('/plan-de-site/', 'Plan de site');
+const fichiers = import.meta.glob('/src/pages/**/*.{astro,md,mdx}');
+for (const fichier of Object.keys(fichiers)) {
+  const chemin = fichier.replace('/src/pages/', '').replace(/\.(astro|md|mdx)$/, '');
+  if (chemin.includes('[') || /(^|\/)(404|500)$/.test(chemin)) continue;
+  const route = chemin === 'index' ? '' : chemin.replace(/\/index$/, '');
+  const url = route ? `/${route}/` : '/';
+  if (liens.has(url)) continue;
+  const libelle = (route.split('/').pop() ?? '').replaceAll('-', ' ').replaceAll('_', ' ');
+  ajouter(url, libelle.charAt(0).toLocaleUpperCase('fr') + libelle.slice(1));
+}
+for (const categorie of categories) ajouter(`/${categorie.slug}/`, categorie.titre);
+for (const outil of outils) {
+  if (liens.has(outil.url)) ajouter(outil.url, outil.titre);
+}
+const articles = (await getArticles()).filter((article) => !article.data.draft);
+for (const article of articles) ajouter(urlArticle(article), article.data.title);
+const trier = (a: Lien, b: Lien) => a.titre.localeCompare(b.titre, 'fr');
+const groupes = categories.map((categorie) => ({
+  ...categorie,
+  url: `/${categorie.slug}/`,
+  enfants: [...liens.values()].filter((lien) => lien.url.startsWith(`/${categorie.slug}/`) && lien.url !== `/${categorie.slug}/`).sort(trier)
+}));
+const generales = [...liens.values()].filter((lien) => !groupes.some((groupe) => lien.url.startsWith(groupe.url))).sort(trier);
+---
+<Base title="Plan de site | PeintureDécor" description="Retrouvez toutes les pages, les guides publiés et les outils de PeintureDécor, classés par rubrique.">
+  <section class="section plan-site">
+    <div class="container">
+      <nav aria-label="Fil d’Ariane"><a href="/">Accueil</a> / Plan de site</nav>
+      <h1>Plan de site</h1>
+      <p>Retrouvez les {liens.size} pages et articles de ce plan, classés par rubrique. Cette liste se met à jour automatiquement à chaque nouvelle mise en ligne du site.</p>
+      <section class="plan-site__groupe" aria-labelledby="plan-pages">
+        <h2 id="plan-pages">Pages générales</h2>
+        <ul>{generales.map((lien) => <li><a href={lien.url} aria-current={lien.url === '/plan-de-site/' ? 'page' : undefined}>{lien.titre}</a></li>)}</ul>
+      </section>
+      <div class="plan-site__grille">
+        {groupes.map((groupe) => (
+          <section class="plan-site__groupe" aria-labelledby={`plan-${groupe.slug}`}>
+            <h2 id={`plan-${groupe.slug}`}><a href={groupe.url}>{groupe.titre}</a></h2>
+            <p><a href={groupe.url}>Consulter la page principale</a></p>
+            {groupe.enfants.length > 0 && <ul>{groupe.enfants.map((lien) => <li><a href={lien.url}>{lien.titre}</a></li>)}</ul>}
+          </section>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .plan-site nav { margin-bottom: 1.5rem; }
+  .plan-site__grille { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; align-items: start; }
+  .plan-site__groupe { margin-block: 1.5rem; padding: 1.5rem; background: #fff; border: 1px solid var(--sable, #E8E0D3); border-radius: var(--radius, 12px); }
+  .plan-site__grille .plan-site__groupe { margin: 0; }
+  .plan-site__groupe h2 { margin-top: 0; }
+  .plan-site__groupe ul { margin-bottom: 0; padding-left: 1.3rem; }
+  .plan-site__groupe li { margin-block: .65rem; overflow-wrap: anywhere; }
+  .plan-site a { text-decoration: underline; text-underline-offset: .2em; }
+  .plan-site a:focus-visible { outline: 3px solid var(--terracotta, #C0603F); outline-offset: 3px; }
+  @media (max-width: 700px) { .plan-site__grille { grid-template-columns: 1fr; } }
+</style>
