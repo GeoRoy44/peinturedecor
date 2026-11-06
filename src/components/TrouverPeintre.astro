@@ -1,0 +1,49 @@
+---
+const villes = [
+  { nom: 'Nantes', entreprises: ['Entreprise Besnard Peinture', 'A2PN Decor', 'Art Decoration Standing'] },
+  { nom: 'Paris', entreprises: ['AR Decor EI', 'LARTISTE Rénov', 'Rouini Habitat', 'Belmard Bâtiment'] },
+  { nom: 'Lyon', entreprises: ['L2 Artisan Peintre', "Les filles peintres d’intérieur", 'WOOX'] },
+  { nom: 'Marseille', entreprises: ['M2PEINTURE', 'SARA PEINTURE', 'ALFA PEINTURE & DECO ET SOL'] },
+  { nom: 'Toulouse', entreprises: ['IS Peinture', 'Tarn Pavillon', 'BP2O'] },
+  { nom: 'Bordeaux', entreprises: ['René Pecou', 'Alvea Design', 'Pascal Aubrie', 'S.P.D.I.'] },
+  { nom: 'Lille', entreprises: ['Roussel Peinture', 'Franck Crepelle', 'Ambiances et Peintures'] },
+  { nom: 'Rennes', entreprises: ['JLpeinture', 'Bihannic Peinture', 'ARTIPRO', 'Ages Decoration', 'Sé vign é Peinture'.replaceAll(' ', '')] },
+  { nom: 'Strasbourg', entreprises: ['HD Concept', 'Peintures Leberquier', 'HK Peinture', 'Roeser', 'Dany Peinture'] },
+  { nom: 'Nice', entreprises: ['Orengo Peinture', 'Saint Roch Peinture', 'Ocra Orlando', 'Galli Peinture'] },
+  { nom: 'Montpellier', entreprises: ['Sésam Rénovation', 'G&M Travaux de Finition', 'A.M.I BAT'] },
+  { nom: 'Grenoble', entreprises: ['Gueripel Julien', 'APM Altitude Prestations Multiples', 'Patruno Décoration'] }
+];
+---
+<section class="section annuaire-peintres" aria-labelledby="trouver-peintre-titre">
+  <div class="container">
+    <h2 id="trouver-peintre-titre">Trouver mon peintre décorateur</h2>
+    <p class="annuaire-peintres__intro">Dépliez une ville pour découvrir des entreprises de peinture et de rénovation présentes dans la ville ou sa métropole. Ces pistes ne constituent ni un classement ni une garantie de prestation : vérifiez leur zone d’intervention, leurs spécialités, leurs assurances et leurs disponibilités avant de demander un devis.</p>
+    <div class="annuaire-peintres__grille">
+      {villes.map((ville) => (
+        <details class="annuaire-peintres__ville">
+          <summary>{ville.nom}</summary>
+          <ul>
+            {ville.nom === 'Nantes' && <li><a href="https://peinturedecor.fr/">Peintre décorateur à Nantes</a></li>}
+            {ville.entreprises.map((nom) => <li>{nom}</li>)}
+          </ul>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .annuaire-peintres { background: var(--chaux, #F5F1EA); }
+  .annuaire-peintres__intro { max-width: 78ch; margin-bottom: 1.5rem; }
+  .annuaire-peintres__grille { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; align-items: start; }
+  .annuaire-peintres__ville { min-width: 0; border: 1px solid var(--sable, #E8E0D3); border-radius: var(--radius, 12px); background: #fff; overflow: hidden; }
+  .annuaire-peintres__ville summary { padding: 1rem 1.2rem; cursor: pointer; font-weight: 600; color: var(--charbon, #2B2622); }
+  .annuaire-peintres__ville summary::marker { color: var(--terracotta, #C0603F); }
+  .annuaire-peintres__ville summary:focus-visible { outline: 3px solid var(--terracotta, #C0603F); outline-offset: -4px; }
+  .annuaire-peintres__ville[open] summary { border-bottom: 1px solid var(--sable, #E8E0D3); }
+  .annuaire-peintres__ville ul { margin: 0; padding: 1rem 1.2rem 1rem 2.4rem; }
+  .annuaire-peintres__ville li { padding-block: .25rem; overflow-wrap: anywhere; }
+  .annuaire-peintres__ville a { color: var(--terracotta, #C0603F); text-decoration: underline; text-underline-offset: .2em; }
+  @media (max-width: 960px) { .annuaire-peintres__grille { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 600px) { .annuaire-peintres__grille { grid-template-columns: 1fr; } }
+</style>
