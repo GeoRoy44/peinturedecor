@@ -15,7 +15,7 @@ const ancres: Record<string, string> = {
   C5: 'Préparer la peinture de votre façade'
 };
 
-const articles = await getArticles();
+const articles = (await getArticles()).filter((a) => !a.data.draft).sort((a, b) => b.data.date.getTime() - a.data.date.getTime() || b.data.idPlan.localeCompare(a.data.idPlan)).slice(0, 9);
 
 const site = 'https://peinturedecor.fr/';
 const jsonLd = JSON.stringify([
@@ -104,7 +104,7 @@ const jsonLd = JSON.stringify([
       <div class="container">
         <div class="reveal" data-reveal>
           <h2>Derniers guides publiés</h2>
-          <p class="section__intro">Les guides arrivent au fil du calendrier éditorial. Voici ceux qui sont déjà en ligne (<strong>la liste se met à jour toute seule</strong> à chaque nouvelle publication).</p>
+          <p class="section__intro">Les guides arrivent au fil du calendrier éditorial. Retrouvez les neuf plus récents (<strong>la liste se met à jour toute seule</strong> à chaque nouvelle publication).</p>
         </div>
         <div class="cartes reveal reveal--cascade" data-reveal>
           {articles.map((a) => (
