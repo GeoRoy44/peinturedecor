@@ -2,14 +2,16 @@
 const { actif = false } = Astro.props;
 ---
 {actif && (
-  <div data-cookies>
+  <div class="cookies" data-cookies>
     <section data-panneau aria-labelledby="titre-cookies" hidden>
-      <h2 id="titre-cookies">Cookies</h2>
-      <p>Les traceurs non essentiels restent désactivés sans votre accord. Vous pouvez modifier votre choix à tout moment.</p>
-      <button type="button" data-choix="non">Tout refuser</button>
-      <button type="button" data-choix="oui">Tout accepter</button>
+      <h2 id="titre-cookies">Vos préférences cookies</h2>
+      <p>Aucun traceur non essentiel n’est installé actuellement. Vous pouvez enregistrer une préférence et la modifier à tout moment.</p>
+      <div class="cookies__actions">
+        <button type="button" data-choix="non">Tout refuser</button>
+        <button type="button" data-choix="oui">Tout accepter</button>
+      </div>
     </section>
-    <button type="button" data-reglages>Gérer mes cookies</button>
+    <button class="cookies__reglages" type="button" data-reglages hidden>Gérer mes cookies</button>
   </div>
 )}
 <script>
@@ -27,8 +29,10 @@ const { actif = false } = Astro.props;
     } catch {}
     bloc.dataset.consentement = choix || 'non';
     panneau.hidden = Boolean(choix);
+    reglages.hidden = !choix;
     reglages.addEventListener('click', () => {
       panneau.hidden = false;
+      reglages.hidden = true;
       panneau.querySelector('button')?.focus();
     });
     panneau.querySelectorAll<HTMLButtonElement>('[data-choix]').forEach((bouton) => {
@@ -38,13 +42,21 @@ const { actif = false } = Astro.props;
         bloc.dataset.consentement = choix;
         bloc.dispatchEvent(new CustomEvent('consentement:change', { bubbles: true, detail: { accepte: choix === 'oui' } }));
         panneau.hidden = true;
+        reglages.hidden = false;
         reglages.focus();
       });
     });
   }
 </script>
 <style>
-  section { padding: 1rem; background: #f1f3f3; color: #1e2424; border: 1px solid #0c4023; border-radius: .75rem; }
-  button { margin: .25rem; padding: .6rem 1rem; border: 1px solid #0c4023; border-radius: .5rem; background: #0c4023; color: #f1f3f3; cursor: pointer; }
-  button:focus-visible { outline: 3px solid #0c4023; outline-offset: 3px; }
+  .cookies { position: fixed; right: 1rem; bottom: 1rem; z-index: 1000; width: min(360px, calc(100% - 2rem)); color: #1e2424; }
+  .cookies [hidden] { display: none !important; }
+  .cookies section { max-height: calc(100dvh - 2rem); overflow-y: auto; padding: 1rem; background: #f1f3f3; border: 1px solid #0c4023; border-radius: 14px; box-shadow: 0 6px 28px #1e242426; }
+  .cookies h2 { margin: 0 0 .5rem; font-size: 1.05rem; line-height: 1.3; }
+  .cookies p { margin: 0 0 .9rem; font-size: .85rem; line-height: 1.5; }
+  .cookies__actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem; }
+  .cookies button { min-height: 44px; padding: .6rem; border: 1px solid #0c4023; border-radius: 8px; background: #0c4023; color: #f1f3f3; font: inherit; font-size: .8rem; cursor: pointer; }
+  .cookies button:hover { background: #1e2424; }
+  .cookies button:focus-visible { outline: 3px solid #0c4023; outline-offset: 3px; }
+  .cookies .cookies__reglages { display: block; margin-left: auto; background: #f1f3f3; color: #0c4023; box-shadow: 0 2px 12px #1e24241a; }
 </style>
