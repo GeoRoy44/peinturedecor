@@ -55,7 +55,7 @@ Nul besoin de dévaliser un magasin de bricolage ! Le matériel tient dans un se
 - une bâche ou de vieux draps pour protéger le sol ;
 - un balai-éponge pour les parties hautes, si besoin.
 
-Le balai-éponge mérite d'ailleurs une mention spéciale. Sur un grand mur, il évite de monter et descendre de l'escabeau sans arrêt, et protège aussi les mains des vieilles pointes oubliées dans le plâtre. Pour le reste de l'équipement, notre guide du [matériel pour peindre](/meilleure-peinture-interieure/materiel-peinture/) détaille les outils de la suite du chantier.
+Le balai-éponge mérite d'ailleurs une mention spéciale. Sur un grand mur, il évite de monter et descendre de l'escabeau sans arrêt, et protège aussi les mains des vieilles pointes oubliées dans le plâtre. Pour la suite du chantier, prévoyez aussi une brosse à rechampir, un rouleau adapté à la peinture et un bac avec grille.
 
 ## Comment lessiver un mur, étape par étape
 
@@ -86,7 +86,7 @@ Un mur de chambre légèrement poussiéreux ne demande pas le même traitement q
 
 ### Dégraisser un mur de cuisine
 
-La cuisine concentre les graisses de cuisson, surtout autour de la plaque et de la hotte. Le lessivage s'y fait en deux passages, avec une solution un peu plus dosée dans la limite indiquée par le fabricant, puis un rinçage soigné. **Les cristaux de soude montrent ici tout leur intérêt**, à condition de porter gants et lunettes. Notre guide pour [peindre une cuisine](/peindre-un-mur/peinture-cuisine/) prend ensuite le relais pour le choix de la finition.
+La cuisine concentre les graisses de cuisson, surtout autour de la plaque et de la hotte. Le lessivage s'y fait en deux passages, avec une solution un peu plus dosée dans la limite indiquée par le fabricant, puis un rinçage soigné. **Les cristaux de soude montrent ici tout leur intérêt**, à condition de porter gants et lunettes. Pour la finition, notre guide aide à [choisir une peinture selon la pièce et l'exposition du mur](/peindre-un-mur/peindre-mur-interieur/).
 
 ### Un mur noirci par la fumée ou jauni par le tabac
 
@@ -96,7 +96,7 @@ Ces murs demandent souvent plusieurs passes, avec une eau changée très réguli
 
 Les taches noires ou verdâtres changent la donne, car elles touchent aussi à la santé. Le ministère de la Santé conseille, dans son guide [Moisissures dans le logement](https://sante.gouv.fr/IMG/pdf/moisissures_dans_le_logement-eviter_et_traiter_vf.pdf), de nettoyer avec un produit ménager détergent, de rincer, de sécher les surfaces et d'aérer pendant toute l'opération, avec des gants et de préférence un masque FFP2 et des lunettes. Il recommande aussi aux personnes sensibles de ne pas procéder elles-mêmes au nettoyage.
 
-**Si les taches reviennent, la vraie question porte sur la cause**, ventilation, infiltration ou pont thermique, plutôt que sur le produit. L'[ARS Auvergne-Rhône-Alpes](https://www.auvergne-rhone-alpes.ars.sante.fr/moisissures-dans-le-logement-comment-agir) rappelle ainsi d'aérer chaque pièce au moins 10 minutes par jour, été comme hiver, et d'éviter de coller les meubles contre les murs froids. Notre article sur la [peinture anti-humidité](/peindre-un-mur/peinture-anti-humidite/) aide à faire le point.
+**Si les taches reviennent, la vraie question porte sur la cause**, ventilation, infiltration ou pont thermique, plutôt que sur le produit. L'[ARS Auvergne-Rhône-Alpes](https://www.auvergne-rhone-alpes.ars.sante.fr/moisissures-dans-le-logement-comment-agir) rappelle ainsi d'aérer chaque pièce au moins 10 minutes par jour, été comme hiver, et d'éviter de coller les meubles contre les murs froids. Ne cherchez pas à masquer une humidité persistante avec une nouvelle peinture : faites-en identifier et traiter la cause avant de poursuivre.
 
 ### Sur une peinture mate ou fragile
 
@@ -110,13 +110,13 @@ Le papier peint ne se lessive pas comme un mur peint, puisque l'eau risque de le
 
 Le séchage complet du mur conditionne la réussite de la suite. **Comptez au moins 24 heures avant la sous-couche dans une pièce normalement ventilée**, et jusqu'à 48 heures dans une salle de bain ou une pièce mal aérée. Ces délais restent indicatifs, et la notice du produit de lessivage peut préciser ses propres recommandations.
 
-Peindre trop tôt revient à enfermer de l'humidité sous la nouvelle couche. Résultat : des bulles, des cloques ou un décollement quelques semaines plus tard, un problème détaillé dans notre article sur la [peinture qui cloque](/peindre-un-mur/peinture-qui-cloque/). Un mur sec au toucher et uniforme à l'œil, sans auréole plus sombre, donne en général le feu vert.
+Peindre trop tôt revient à enfermer de l'humidité sous la nouvelle couche. Résultat : des bulles, des cloques ou un décollement quelques semaines plus tard. Un mur sec au toucher et uniforme à l'œil, sans auréole plus sombre, donne en général le feu vert.
 
 ## Ce que le lessivage ne règle pas
 
 Soyons clairs, le lessivage ne fait pas de miracle. Une fissure, une auréole d'humidité qui revient ou une peinture qui s'écaille demandent un vrai diagnostic. **Si la tache réapparaît après séchage, mieux vaut en chercher la cause avant de repeindre**, sans quoi elle risque de traverser la nouvelle couche en quelques semaines.
 
-Les petites réparations prennent ensuite le relais : notre tutoriel pour [reboucher une fissure](/peindre-un-mur/fissure-mur/) explique la marche à suivre, et un [enduit de lissage](/peindre-un-mur/enduit-de-lissage/) redonne un support plan aux murs les plus irréguliers.
+Les petites réparations prennent ensuite le relais : rebouchez les défauts localisés avec un produit adapté et identifiez la cause d'une fissure qui s'ouvre ou réapparaît avant de la réparer. Un [enduit de lissage](/peindre-un-mur/enduit-de-lissage/) sert à corriger les irrégularités superficielles étendues.
 
 ## Questions fréquentes
 

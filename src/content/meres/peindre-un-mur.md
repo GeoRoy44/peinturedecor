@@ -21,11 +21,11 @@ Pour peindre un mur, vérifiez d’abord son état. Protégez ensuite la pièce,
 
 ## Quel matériel et quelle quantité de peinture prévoir ?
 
-Prévoyez une bâche, un ruban adapté aux surfaces à protéger, une brosse à rechampir, un rouleau avec son manchon, un bac avec grille et un mélangeur. Ajoutez une perche si elle facilite l’accès au haut du mur, ainsi que le matériel de réparation indiqué par l’état du support. Le [guide du matériel de peinture](/meilleure-peinture-interieure/materiel-peinture/) détaille les outils.
+Prévoyez une bâche, un ruban adapté aux surfaces à protéger, une brosse à rechampir, un rouleau avec son manchon, un bac avec grille et un mélangeur. Ajoutez une perche si elle facilite l’accès au haut du mur, ainsi que le matériel de réparation indiqué par l’état du support.
 
-Choisissez le [rouleau](/meilleure-peinture-interieure/rouleau-peinture/) selon le relief du support et les consignes du fabricant. Pour [choisir une peinture pour un mur intérieur](/peindre-un-mur/peindre-mur-interieur/), partez de l’usage de la pièce, notamment des frottements et des besoins de nettoyage. Le [guide des finitions](/meilleure-peinture-interieure/finition-peinture/) compare les aspects ; vérifiez la résistance au nettoyage sur la fiche du produit. Le [simulateur de peinture](/meilleure-peinture-interieure/simulateur-peinture/) aide à présélectionner des teintes, à confirmer avec un échantillon sur place. Retrouvez la méthode pour [choisir une couleur pour son mur](/peindre-un-mur/peindre-mur-en-couleur/) et décider où l’appliquer.
+Choisissez le rouleau selon le relief du support et les consignes du fabricant. Pour [choisir une peinture pour un mur intérieur](/peindre-un-mur/peindre-mur-interieur/), partez de l’usage de la pièce, notamment des frottements et des besoins de nettoyage. Comparez les aspects mat, velours et satiné, puis vérifiez la résistance au nettoyage sur la fiche du produit. Le [simulateur de peinture](/meilleure-peinture-interieure/simulateur-peinture/) aide à présélectionner des teintes, à confirmer avec un échantillon sur place. Retrouvez la méthode pour [choisir une couleur pour son mur](/peindre-un-mur/peindre-mur-en-couleur/) et décider où l’appliquer.
 
-Pour estimer les litres, multipliez la surface nette par le nombre de couches, puis divisez par le rendement du produit. Pour 30 m², deux couches et 10 m²/L, comptez 6 L de finition. Calculez séparément l’impression si elle est nécessaire. Utilisez le [calculateur de quantité de peinture](/peindre-un-mur/calcul-quantite-peinture/) avec vos propres mesures.
+Pour estimer les litres, multipliez la surface nette par le nombre de couches, puis divisez par le rendement du produit. Pour 30 m², deux couches et 10 m²/L, comptez 6 L de finition. Calculez séparément l’impression si elle est nécessaire. Reprenez ce calcul avec vos propres mesures et le rendement de la peinture choisie.
 
 ## Dans quel ordre peindre une pièce ?
 

@@ -26,7 +26,7 @@ Les deux produits se ressemblent dans le seau, mais pas sur le mur :
 | Texture | Plus ferme, tient dans la profondeur | Plus fluide, glisse sous la lame |
 | Ponçage | Local | Sur l'ensemble du mur |
 
-Concrètement, les trous se rebouchent d'abord, puis le lissage unifie le tout. Pour une fissure qui s'ouvre ou réapparaît, notre tutoriel pour [reboucher une fissure](/peindre-un-mur/fissure-mur/) détaille la marche à suivre. (Les enduits dits « 2 en 1 » font les deux, avec un résultat correct sur des murs peu abîmés.)
+Concrètement, les trous se rebouchent d'abord, puis le lissage unifie le tout. Pour une fissure qui s'ouvre ou réapparaît, faites identifier la cause avant de la reboucher. (Les enduits dits « 2 en 1 » font les deux, avec un résultat correct sur des murs peu abîmés.)
 
 ## Quel enduit de lissage choisir
 
@@ -61,7 +61,7 @@ Nul besoin d'investir dans une panoplie de plâtrier ! Un équipement de base su
 - du papier abrasif de différents grains et une cale ou une ponceuse à perche ;
 - une lampe pour éclairer le mur en lumière rasante.
 
-D'ailleurs, cette lampe compte parmi les outils les plus utiles du chantier. Placée contre le mur, elle révèle les creux et les surépaisseurs bien avant la peinture. Le reste de l'équipement figure dans notre guide du [matériel pour peindre](/meilleure-peinture-interieure/materiel-peinture/).
+D'ailleurs, cette lampe compte parmi les outils les plus utiles du chantier. Placée contre le mur, elle révèle les creux et les surépaisseurs bien avant la peinture.
 
 ## Comment appliquer un enduit de lissage, étape par étape
 
@@ -90,7 +90,7 @@ Une fois la première couche sèche, la seconde passe se fait dans le sens perpe
 
 ## Combien de temps sèche un enduit de lissage
 
-Tout dépend du produit, de l'épaisseur, de la température et de l'humidité de la pièce. **Le délai va de 2 heures pour les enduits les plus rapides à 48 heures avant la finition pour d'autres**, d'après les fiches techniques des fabricants, et il s'allonge encore dans une pièce fraîche. Le temps indiqué sur la notice fait foi, et un enduit sec se reconnaît à sa teinte uniforme, sans zone plus sombre. Notre article sur le [temps de séchage de la peinture](/peindre-un-mur/temps-de-sechage-peinture/) aide ensuite à planifier la suite du chantier.
+Tout dépend du produit, de l'épaisseur, de la température et de l'humidité de la pièce. **Le délai va de 2 heures pour les enduits les plus rapides à 48 heures avant la finition pour d'autres**, d'après les fiches techniques des fabricants, et il s'allonge encore dans une pièce fraîche. Le temps indiqué sur la notice fait foi, et un enduit sec se reconnaît à sa teinte uniforme, sans zone plus sombre. Pour planifier la suite, vérifiez séparément le délai de recouvrement de l'enduit, de l'impression et de la peinture : sec au toucher ne signifie pas nécessairement recouvrable.
 
 ## Comment poncer un enduit de lissage
 
@@ -128,7 +128,7 @@ Oui, avec le même produit, mais le travail s'avère nettement plus fatigant pou
 
 ### Faut-il faire appel à un professionnel ?
 
-Pour un ou deux murs, le chantier reste accessible avec un peu de méthode. Pour une maison entière ou des plafonds hauts, le gain de temps d'un professionnel devient vite intéressant, comme l'explique notre comparatif [peindre soi-même ou faire appel à un peintre](/peindre-un-mur/peindre-soi-meme-ou-peintre/). Notre annuaire permet aussi de [trouver un peintre en bâtiment](/peintre-en-batiment/) près de chez vous.
+Pour un ou deux murs, le chantier reste accessible avec un peu de méthode. Pour une maison entière ou des plafonds hauts, comparez le temps disponible, la difficulté d'accès et l'ampleur des reprises avant de décider de réaliser les travaux vous-même. Vous pouvez aussi [trouver un peintre en bâtiment](/peintre-en-batiment/) près de chez vous.
 
 ## Et maintenant ?
 
