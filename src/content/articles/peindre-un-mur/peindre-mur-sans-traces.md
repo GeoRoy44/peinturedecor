@@ -13,6 +13,8 @@ Il reste trente centimètres à peindre. Le rouleau ne dépose presque plus rien
 
 Pour peindre un mur sans traces, rechargez le rouleau dès qu’il dépose moins de peinture et raccordez chaque zone à la précédente tant que son bord est encore frais. Pour le matériel et l’ordre du chantier, retrouvez notre [guide pour peindre un mur](/peindre-un-mur/).
 
+Vous travaillez au-dessus de votre tête ? Le guide pour [peindre un plafond sans traces](/peindre-un-mur/peindre-un-plafond/) détaille l’organisation du travail à la perche et les raccords entre les zones.
+
 ## Pourquoi voit-on des traces après avoir peint un mur ?
 
 Une « trace de rouleau », ça peut être une ligne entre deux zones, une bande où l’ancienne couleur transparaît ou un petit bourrelet qu’on sent sous le doigt. Avant de chercher à l’effacer, attendez que le mur soit sec. Vous verrez mieux si le problème vient de l’application ou du mur lui-même.
@@ -31,7 +33,7 @@ Regardez d’abord la forme de la marque. Une ligne qui correspond à l’endroi
 
 Choisissez le manchon, la partie du rouleau qui reçoit la peinture, selon le relief du mur et les indications du fabricant. Sur un mur lisse, cherchez un manchon prévu pour ce type de surface. Sur un mur texturé, des fibres plus longues peuvent aider à atteindre les creux, si elles conviennent à la peinture utilisée.
 
-Je regarderais ensuite ce que le rouleau dépose avant de regarder ce qui est écrit dessus. Un manchon « anti-goutte » ne compense pas un rouleau presque sec. Une peinture mate peut atténuer les reflets, mais elle ne vous rend pas le bord humide une fois qu’il a séché. Et la mention « monocouche » ne garantit pas que l’ancienne teinte disparaîtra partout au premier passage.
+Je regarderais ensuite ce que le rouleau dépose avant de regarder ce qui est écrit dessus. Un manchon « anti-goutte » ne compense pas un rouleau presque sec. Une peinture mate peut atténuer les reflets, mais elle ne vous rend pas le bord humide une fois qu’il a séché. Et la mention « monocouche » ne garantit pas que l’ancienne teinte disparaîtra partout au premier passage. Pour distinguer l’aspect de la finition de sa résistance au nettoyage, consultez le guide pour [choisir une peinture selon la pièce](/peindre-un-mur/peindre-mur-interieur/).
 
 > En bref : si le rouleau commence à laisser des manques, rechargez-le. Appuyer plus fort ne remet pas de peinture dans le manchon.
 

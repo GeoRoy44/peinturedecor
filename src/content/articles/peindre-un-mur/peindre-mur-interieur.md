@@ -51,7 +51,7 @@ Pour une chambre, vous pouvez aussi comparer l’étiquette « Émissions dans l
 
 ## Le produit est choisi : que reste-t-il à décider ?
 
-Si vous hésitez encore entre deux teintes, ramenez la décision dans la pièce. Regardez les échantillons sur le mur concerné, de jour puis sous la lampe que vous allumez le soir. Le beige qui vous plaisait dans le rayon n’a pas besoin de vous plaire dans le rayon une deuxième fois. C’est chez vous qu’il va rester.
+Si vous hésitez encore entre deux teintes, ramenez la décision dans la pièce. Regardez les échantillons sur le mur concerné, de jour puis sous la lampe que vous allumez le soir. Le beige qui vous plaisait dans le rayon n’a pas besoin de vous plaire dans le rayon une deuxième fois. C’est chez vous qu’il va rester. Le guide pour [peindre un mur en couleur](/peindre-un-mur/peindre-mur-en-couleur/) vous aide à choisir le pan à mettre en valeur, tester la teinte et délimiter deux couleurs.
 
 Si la teinte et le produit sont choisis, passez au geste : le guide pour [obtenir une finition sans traces](/peindre-un-mur/peindre-mur-sans-traces/) explique comment charger le rouleau et raccorder les zones avant qu’elles sèchent. Le pot vous dit ce que la peinture peut faire. Il ne vous dit pas quand recharger le rouleau.
 

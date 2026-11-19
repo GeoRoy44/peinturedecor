@@ -59,9 +59,11 @@ Un trou de cheville et une bosse peuvent faire presque la même ombre. Sauf que 
 
 ## Que faire sur un mur neuf ou déjà peint ?
 
-Sur du placo neuf, regardez les bandes à joint. Voyez-vous une ombre parce qu’un bord dépasse, ou simplement une différence d’aspect entre le joint et la plaque ? Une impression peut régulariser l’absorption d’un fond poreux. Elle ne fait pas rentrer un bourrelet dans le mur. Corrigez le relief s’il y en a un, dépoussiérez, puis vérifiez ce que prévoit le système de peinture pour ce support.
+Sur du placo neuf, regardez les bandes à joint. Voyez-vous une ombre parce qu’un bord dépasse, ou simplement une différence d’aspect entre le joint et la plaque ? Une impression peut régulariser l’absorption d’un fond poreux. Elle ne fait pas rentrer un bourrelet dans le mur. Corrigez le relief s’il y en a un, dépoussiérez, puis vérifiez ce que prévoit le système de peinture pour ce support. Le guide pour [peindre un mur neuf en placo ou en plâtre](/peindre-un-mur/peindre-mur-neuf/) détaille le contrôle des bandes et la préparation de ces fonds.
 
-Sur un mur déjà peint, la question est différente : est-ce que l’ancienne peinture tient, est-elle propre et la nouvelle finition peut-elle s’y appliquer ? Si les trois réponses sont oui, le ponçage et le primaire ne sont pas systématiques. Sur une finition brillante, vérifiez la préparation d’accrochage demandée par le fabricant. Si la peinture se détache, ne comptez pas sur la suivante pour la retenir.
+Sur un mur déjà peint, la question est différente : est-ce que l’ancienne peinture tient, est-elle propre et la nouvelle finition peut-elle s’y appliquer ? Si les trois réponses sont oui, le ponçage et le primaire ne sont pas systématiques. Sur une finition brillante, vérifiez la préparation d’accrochage demandée par le fabricant. Si la peinture se détache, ne comptez pas sur la suivante pour la retenir. Retrouvez le diagnostic pour [repeindre un mur déjà peint](/peindre-un-mur/repeindre-mur-deja-peint/) avant de décider de poncer ou d’appliquer un primaire.
+
+Si le mur est encore tapissé, commencez par décider s’il faut retirer le revêtement. Notre guide pour [peindre sur du papier peint](/peindre-un-mur/peindre-sur-papier-peint/) explique les contrôles de tenue, les limites du résultat et les vérifications de compatibilité avant d’envisager de le conserver.
 
 Bref, [vérifiez si une sous-couche est nécessaire](/peindre-un-mur/sous-couche-peinture/) une fois que vous savez ce que vous lui demandez. Régulariser un fond poreux, améliorer l’accroche ou isoler une tache résiduelle sur un mur sec : ce ne sont pas trois façons de dire la même chose.
 
