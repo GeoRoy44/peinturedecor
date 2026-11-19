@@ -1,0 +1,50 @@
+---
+const { actif = false } = Astro.props;
+---
+{actif && (
+  <div data-cookies>
+    <section data-panneau aria-labelledby="titre-cookies" hidden>
+      <h2 id="titre-cookies">Cookies</h2>
+      <p>Les traceurs non essentiels restent désactivés sans votre accord. Vous pouvez modifier votre choix à tout moment.</p>
+      <button type="button" data-choix="non">Tout refuser</button>
+      <button type="button" data-choix="oui">Tout accepter</button>
+    </section>
+    <button type="button" data-reglages>Gérer mes cookies</button>
+  </div>
+)}
+<script>
+  const bloc = document.querySelector<HTMLElement>('[data-cookies]');
+  const panneau = bloc?.querySelector<HTMLElement>('[data-panneau]');
+  const reglages = bloc?.querySelector<HTMLButtonElement>('[data-reglages]');
+  if (bloc && panneau && reglages) {
+    const cle = 'peinturedecor-consentement-v1';
+    const duree = 180 * 86400000;
+    let choix = '';
+    try {
+      const saved = JSON.parse(localStorage.getItem(cle) ?? 'null');
+      if (saved && saved.expire > Date.now() && ['oui', 'non'].includes(saved.choix)) choix = saved.choix;
+      else localStorage.removeItem(cle);
+    } catch {}
+    bloc.dataset.consentement = choix || 'non';
+    panneau.hidden = Boolean(choix);
+    reglages.addEventListener('click', () => {
+      panneau.hidden = false;
+      panneau.querySelector('button')?.focus();
+    });
+    panneau.querySelectorAll<HTMLButtonElement>('[data-choix]').forEach((bouton) => {
+      bouton.addEventListener('click', () => {
+        choix = bouton.dataset.choix ?? 'non';
+        try { localStorage.setItem(cle, JSON.stringify({ choix, expire: Date.now() + duree })); } catch {}
+        bloc.dataset.consentement = choix;
+        bloc.dispatchEvent(new CustomEvent('consentement:change', { bubbles: true, detail: { accepte: choix === 'oui' } }));
+        panneau.hidden = true;
+        reglages.focus();
+      });
+    });
+  }
+</script>
+<style>
+  section { padding: 1rem; background: #f1f3f3; color: #1e2424; border: 1px solid #0c4023; border-radius: .75rem; }
+  button { margin: .25rem; padding: .6rem 1rem; border: 1px solid #0c4023; border-radius: .5rem; background: #0c4023; color: #f1f3f3; cursor: pointer; }
+  button:focus-visible { outline: 3px solid #0c4023; outline-offset: 3px; }
+</style>
