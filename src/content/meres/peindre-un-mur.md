@@ -67,6 +67,16 @@ Retirez le ruban selon les consignes de l’adhésif et de la peinture. Une fois
 
 Pour un mur très dégradé ou difficile d’accès, vous pouvez aussi [trouver un peintre en bâtiment](/peintre-en-batiment/).
 
+## Votre projet relève-t-il d’une autre rubrique ?
+
+Ce guide suit la mise en peinture d’un mur intérieur. Pour vous orienter dans les autres univers du site :
+
+- La [rubrique peinture décorative](/peinture-decorative/) est consacrée aux effets et aux matières plutôt qu’au seul aplat de couleur.
+- La [rubrique outils et comparatifs](/meilleure-peinture-interieure/) rassemble les outils disponibles, dont le simulateur, et accueillera les comparatifs de produits et de matériel.
+- La [rubrique extérieur et façade](/peinture-facade/) est dédiée aux projets extérieurs, distincts de la méthode intérieure présentée ici.
+
+Les rubriques peinture décorative et extérieur sont encore en cours de constitution : leurs guides détaillés ne sont pas encore disponibles.
+
 ## Questions fréquentes
 
 ### Combien de couches faut-il pour peindre un mur ?
