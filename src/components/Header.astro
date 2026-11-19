@@ -5,7 +5,32 @@ import { categories } from '../data/categories';
   <div class="container header__inner">
     <a href="/" class="logo">Peinture<span>Décor</span></a>
     <nav class="nav" aria-label="Navigation principale">
-      {categories.map((c) => <a href={`/${c.slug}/`}>{c.titre}</a>)}
+      {categories.map((c) => (
+        <a href={`/${c.slug}/`} class:list={[{ 'nav__cta': c.slug === 'peintre-en-batiment' }]}>
+          {c.slug === 'peintre-en-batiment' ? 'Trouver un peintre' : c.titre}
+        </a>
+      ))}
     </nav>
   </div>
 </header>
+
+<style>
+  .nav a.nav__cta {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: .45rem .9rem;
+    border-radius: 999px;
+    background: #0c4023;
+    color: #f1f3f3;
+    font-weight: 700;
+  }
+  .nav a.nav__cta:hover {
+    background: #1e2424;
+    color: #f1f3f3;
+  }
+  .nav a.nav__cta:focus-visible {
+    outline: 2px solid #0c4023;
+    outline-offset: 3px;
+  }
+</style>
