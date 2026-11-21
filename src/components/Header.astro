@@ -1,11 +1,16 @@
 ---
 import { categories } from '../data/categories';
+
+const navigationCategories = [
+  ...categories.filter((category) => category.slug !== 'peintre-en-batiment'),
+  ...categories.filter((category) => category.slug === 'peintre-en-batiment'),
+];
 ---
 <header class="header">
   <div class="container header__inner">
     <a href="/" class="logo">Peinture<span>Décor</span></a>
     <nav class="nav" aria-label="Navigation principale">
-      {categories.map((c) => (
+      {navigationCategories.map((c) => (
         <a href={`/${c.slug}/`} class:list={[{ 'nav__cta': c.slug === 'peintre-en-batiment' }]}>
           {c.slug === 'peintre-en-batiment' ? 'Trouver un peintre' : c.titre}
         </a>
